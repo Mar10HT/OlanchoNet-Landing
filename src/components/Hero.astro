@@ -25,13 +25,13 @@
   <!-- Content -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center pt-20">
     <!-- Location badge -->
-    <span class="inline-flex items-center gap-1.5 text-white/40 text-xs tracking-wide mb-8">
+    <span class="hero-enter inline-flex items-center gap-1.5 text-white/40 text-xs tracking-wide mb-8" style="animation-delay: 0ms;">
       <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
       Olancho, Honduras
     </span>
 
     <!-- Heading -->
-    <h1 class="text-white font-display font-black leading-none mb-8">
+    <h1 class="hero-enter text-white font-display font-black leading-none mb-8" style="animation-delay: 80ms;">
       <span class="block tracking-tight" style="font-size: clamp(2.75rem, 7vw + 0.5rem, 6rem);">
         Internet que
       </span>
@@ -44,50 +44,91 @@
     </h1>
 
     <!-- Subtext -->
-    <p class="text-white/60 text-lg sm:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+    <p class="hero-enter text-white/60 text-lg sm:text-xl max-w-2xl mx-auto mb-12 leading-relaxed" style="animation-delay: 180ms;">
       Llevamos conectividad de alta velocidad a hogares y empresas en 14 municipios
       del departamento. Fibra, inalámbrico, IPTV y soporte técnico local.
     </p>
 
     <!-- CTAs -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <div class="hero-enter flex flex-col sm:flex-row items-center justify-center gap-4" style="animation-delay: 280ms;">
       <a
         href="#servicios"
-        class="px-8 py-3.5 text-white font-semibold text-sm tracking-wide rounded transition-all duration-200 hover:opacity-90 hover:scale-105"
+        class="px-8 py-3.5 text-white font-semibold text-sm tracking-wide rounded transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
         style="background: var(--color-brand-blue);"
       >
         Ver servicios
       </a>
       <a
         href="#contacto"
-        class="px-8 py-3.5 border border-white/30 text-white font-semibold text-sm tracking-wide rounded transition-all duration-200 hover:border-white/60 hover:bg-white/5"
+        class="px-8 py-3.5 border border-white/30 text-white font-semibold text-sm tracking-wide rounded transition-all duration-200 hover:border-white/60 hover:bg-white/5 active:scale-95"
       >
         Contactar
       </a>
     </div>
 
     <!-- Stats -->
-    <div class="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto border-t border-white/10 pt-10">
+    <div id="hero-stats" class="hero-enter mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto border-t border-white/10 pt-10" style="animation-delay: 420ms;">
       <div>
-        <div class="text-3xl font-black text-white">14</div>
+        <div class="stat-num text-3xl font-black text-white" data-target="14">14</div>
         <div class="text-white/40 text-xs tracking-wider uppercase mt-1">Municipios</div>
       </div>
       <div>
-        <div class="text-3xl font-black text-white">10+</div>
+        <div class="stat-num text-3xl font-black text-white" data-target="10" data-suffix="+">10+</div>
         <div class="text-white/40 text-xs tracking-wider uppercase mt-1">Años</div>
       </div>
       <div>
-        <div class="text-3xl font-black text-white">6</div>
+        <div class="stat-num text-3xl font-black text-white" data-target="6">6</div>
         <div class="text-white/40 text-xs tracking-wider uppercase mt-1">Servicios</div>
       </div>
     </div>
   </div>
 
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
+  <div class="hero-enter absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30" style="animation-delay: 600ms;">
     <span class="text-xs tracking-widest uppercase">Scroll</span>
     <div class="w-px h-8 bg-white/20 relative overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full bg-white/60 animate-bounce"></div>
+      <div class="scroll-line absolute top-0 left-0 w-full h-full bg-white/60"></div>
     </div>
   </div>
+
+<style>
+  .scroll-line {
+    animation: scroll-pulse 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-line { animation: none; opacity: 0.6; }
+  }
+</style>
+
+<script>
+  // Count-up animation for hero stats
+  const statsEl = document.getElementById('hero-stats');
+  if (statsEl) {
+    const countObserver = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      countObserver.disconnect();
+
+      statsEl.querySelectorAll('.stat-num').forEach(el => {
+        const target = parseInt((el as HTMLElement).dataset.target ?? '0', 10);
+        const suffix = (el as HTMLElement).dataset.suffix ?? '';
+        let current = 0;
+        const duration = 900;
+        const startTime = performance.now();
+
+        const tick = (now: number) => {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 4); // ease-out-quart
+          current = Math.round(ease * target);
+          el.textContent = current + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+
+        // Delay start until after hero-enter animation completes
+        setTimeout(() => requestAnimationFrame(tick), 500);
+      });
+    }, { threshold: 0.5 });
+
+    countObserver.observe(statsEl);
+  }
+</script>
 </section>
