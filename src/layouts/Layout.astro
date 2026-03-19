@@ -52,9 +52,22 @@ const ogImage = `${canonicalUrl}/images/logo-color.svg`;
             revealObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+      }, { threshold: 0.05, rootMargin: '0px 0px -32px 0px' });
 
       document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+      // Fallback: after any scroll settles, force-reveal elements already above viewport
+      let revealTimer: ReturnType<typeof setTimeout>;
+      window.addEventListener('scroll', () => {
+        clearTimeout(revealTimer);
+        revealTimer = setTimeout(() => {
+          document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => {
+            if (el.getBoundingClientRect().bottom < 0) {
+              el.classList.add('is-visible');
+            }
+          });
+        }, 100);
+      }, { passive: true });
     </script>
   </body>
 </html>
