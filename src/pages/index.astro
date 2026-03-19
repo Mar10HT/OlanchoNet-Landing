@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Servicios from '../components/Servicios.astro';
+import Nosotros from '../components/Nosotros.astro';
+import Cobertura from '../components/Cobertura.astro';
+import Marquee from '../components/Marquee.astro';
+import Contacto from '../components/Contacto.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Nav activePage="home" />
+  <main>
+    <Hero />
+    <Servicios />
+    <Nosotros />
+    <Marquee />
+    <Cobertura />
+    <Contacto />
+  </main>
+  <Footer />
+</Layout>
