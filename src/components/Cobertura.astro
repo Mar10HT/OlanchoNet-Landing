@@ -67,7 +67,7 @@ const municipios = [
 ];
 ---
 
-<section id="cobertura" class="bg-[#060F1E] overflow-hidden">
+<section id="cobertura" class="bg-brand-darker overflow-hidden">
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px]">
 
@@ -108,7 +108,7 @@ const municipios = [
                 <circle class="pulse-ring" cx={m.cx} cy={m.cy} r="320" />
                 <circle
                   cx={m.cx} cy={m.cy} r="150"
-                  fill="#4EB648"
+                  style="fill: var(--color-brand-green);"
                   stroke="rgba(78,182,72,0.5)"
                   stroke-width="80"
                 />
@@ -144,7 +144,7 @@ const municipios = [
       <!-- Content column -->
       <div class="py-16 px-6 lg:pl-0 lg:pr-12 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/5">
 
-        <p class="text-[#4EB648] text-xs font-semibold tracking-[0.25em] uppercase mb-5">
+        <p class="text-brand-green text-xs font-semibold tracking-[0.25em] uppercase mb-5">
           Cobertura regional
         </p>
 
@@ -161,7 +161,7 @@ const municipios = [
           <div class="h-1.5 rounded-full overflow-hidden" style="background: rgba(255,255,255,0.07);">
             <div
               class="h-full rounded-full progress-fill"
-              style="background: linear-gradient(90deg, #0076BB, #4EB648);"
+              style="background: linear-gradient(90deg, var(--color-brand-blue), var(--color-brand-green));"
             ></div>
           </div>
         </div>
@@ -182,7 +182,7 @@ const municipios = [
           <button
             id="check-coverage-btn"
             class="w-full py-3 text-white font-semibold text-sm rounded-lg transition-all duration-200 hover:opacity-90"
-            style="background: #0076BB;"
+            style="background: var(--color-brand-blue);"
           >
             Verificar disponibilidad
           </button>
@@ -192,7 +192,7 @@ const municipios = [
         <!-- Legend -->
         <div class="flex gap-6">
           <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background: #4EB648;"></span>
+            <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background: var(--color-brand-green);"></span>
             <span class="text-white/40 text-xs">Cobertura activa</span>
           </div>
           <div class="flex items-center gap-2">
@@ -286,7 +286,7 @@ const municipios = [
       result.style.color = 'rgba(255,255,255,0.35)';
     } else if (coveredSet.has(val)) {
       result.innerHTML   = '✓ &nbsp;Cobertura disponible en ' + val;
-      result.style.color = '#4EB648';
+      result.style.color = 'var(--color-brand-green)';
     } else {
       result.innerHTML   = '○ &nbsp;Aún no disponible — contáctanos para más info.';
       result.style.color = 'rgba(255,255,255,0.4)';

@@ -39,7 +39,7 @@ const { activePage = 'home' } = Astro.props;
         )}
         <a
           href="/carreras"
-          class="ml-2 px-5 py-2 border border-white/40 text-white text-sm font-medium tracking-wide rounded hover:bg-white hover:text-[#0076BB] transition-all duration-200"
+          class="ml-2 px-5 py-2 border border-white/40 text-white text-sm font-medium tracking-wide rounded hover:bg-white hover:text-brand-blue transition-all duration-200"
         >
           Carreras
         </a>
@@ -65,7 +65,7 @@ const { activePage = 'home' } = Astro.props;
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-[#0d1421] border-t border-white/10">
+  <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-t border-white/10">
     <div class="px-6 py-4 flex flex-col gap-4">
       {activePage === 'home' && (
         <>
@@ -80,7 +80,7 @@ const { activePage = 'home' } = Astro.props;
       )}
       <a
         href="/carreras"
-        class="px-5 py-2.5 border border-white/40 text-white text-sm font-medium tracking-wide rounded text-center hover:bg-white hover:text-[#0076BB] transition-all duration-200"
+        class="px-5 py-2.5 border border-white/40 text-white text-sm font-medium tracking-wide rounded text-center hover:bg-white hover:text-brand-blue transition-all duration-200"
       >
         Carreras
       </a>
@@ -99,10 +99,10 @@ const { activePage = 'home' } = Astro.props;
   function updateNav() {
     const scrolled = window.scrollY > 60;
     if (scrolled) {
-      nav.classList.add('bg-[#0d1421]', 'shadow-lg');
+      nav.classList.add('bg-brand-dark', 'shadow-lg');
       nav.setAttribute('data-transparent', 'false');
     } else {
-      nav.classList.remove('bg-[#0d1421]', 'shadow-lg');
+      nav.classList.remove('bg-brand-dark', 'shadow-lg');
       nav.setAttribute('data-transparent', 'true');
     }
   }
