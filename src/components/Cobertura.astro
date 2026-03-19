@@ -1,0 +1,296 @@
+---
+// Centroids from the real Olancho SVG (viewBox 3600 1400 19200 13200)
+const covered = [
+  { nombre: 'Juticalpa',               cx: 10463, cy: 11948 },
+  { nombre: 'Campamento',              cx:  7365, cy: 12402 },
+  { nombre: 'El Rosario',              cx:  6858, cy:  8458 },
+  { nombre: 'Gualaco',                 cx: 12680, cy:  5420 },
+  { nombre: 'Guarizama',               cx: 10600, cy:  8428 },
+  { nombre: 'Guata',                   cx:  9858, cy:  6029 },
+  { nombre: 'Jano',                    cx:  8561, cy:  6993 },
+  { nombre: 'La Unión',                cx:  7131, cy:  6514 },
+  { nombre: 'Manto',                   cx:  9723, cy:  8716 },
+  { nombre: 'Salamá',                  cx:  7386, cy:  9085 },
+  { nombre: 'San Esteban',             cx: 15979, cy:  4574 },
+  { nombre: 'San Francisco de la Paz', cx: 12147, cy:  9050 },
+  { nombre: 'Silca',                   cx:  8441, cy:  9667 },
+  { nombre: 'Yocón',                   cx:  5665, cy:  7974 },
+];
+
+// Connection lines between adjacent covered municipalities
+const connections: [number,number,number,number][] = [
+  [10463,11948,  9723, 8716], // Juticalpa - Manto
+  [10463,11948, 12147, 9050], // Juticalpa - SF de la Paz
+  [10463,11948, 10600, 8428], // Juticalpa - Guarizama
+  [10463,11948,  7386, 9085], // Juticalpa - Salamá
+  [10463,11948,  7365,12402], // Juticalpa - Campamento
+  [ 9723, 8716, 10600, 8428], // Manto - Guarizama
+  [ 9723, 8716,  8441, 9667], // Manto - Silca
+  [10600, 8428, 12147, 9050], // Guarizama - SF de la Paz
+  [10600, 8428,  9858, 6029], // Guarizama - Guata
+  [12147, 9050, 12680, 5420], // SF de la Paz - Gualaco
+  [12680, 5420, 15979, 4574], // Gualaco - San Esteban
+  [ 9858, 6029,  8561, 6993], // Guata - Jano
+  [ 9858, 6029, 12680, 5420], // Guata - Gualaco
+  [ 8561, 6993,  7131, 6514], // Jano - La Unión
+  [ 7131, 6514,  6858, 8458], // La Unión - El Rosario
+  [ 7131, 6514,  5665, 7974], // La Unión - Yocón
+  [ 6858, 8458,  7386, 9085], // El Rosario - Salamá
+  [ 7386, 9085,  8441, 9667], // Salamá - Silca
+  [ 7386, 9085,  7365,12402], // Salamá - Campamento
+];
+
+const municipios = [
+  { nombre: 'Campamento',               covered: true },
+  { nombre: 'Catacamas',                covered: false },
+  { nombre: 'Concordia',                covered: false },
+  { nombre: 'Dulce Nombre de Culmí',    covered: false },
+  { nombre: 'El Rosario',               covered: true },
+  { nombre: 'Esquipulas del Norte',     covered: false },
+  { nombre: 'Gualaco',                  covered: true },
+  { nombre: 'Guarizama',                covered: true },
+  { nombre: 'Guata',                    covered: true },
+  { nombre: 'Guayape',                  covered: false },
+  { nombre: 'Jano',                     covered: true },
+  { nombre: 'Juticalpa',                covered: true },
+  { nombre: 'La Unión',                 covered: true },
+  { nombre: 'Manguilile',               covered: false },
+  { nombre: 'Manto',                    covered: true },
+  { nombre: 'Patuca',                   covered: false },
+  { nombre: 'Salamá',                   covered: true },
+  { nombre: 'San Esteban',              covered: true },
+  { nombre: 'San Francisco de Becerra', covered: false },
+  { nombre: 'San Francisco de la Paz',  covered: true },
+  { nombre: 'Santa María del Real',     covered: false },
+  { nombre: 'Silca',                    covered: true },
+  { nombre: 'Yocón',                    covered: true },
+];
+---
+
+<section id="cobertura" class="bg-[#060F1E] overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px]">
+
+      <!-- Map column -->
+      <div class="relative py-12 px-4 lg:px-8 flex items-center">
+        <div class="w-full relative map-wrap">
+
+          <!-- Real municipality SVG map -->
+          <img
+            src="/images/olancho-map-styled.webp"
+            alt="Mapa de cobertura en Olancho"
+            width="756"
+            height="522"
+            loading="lazy"
+            class="w-full h-auto block"
+            style="filter: drop-shadow(0 0 60px rgba(0,118,187,0.20));"
+          />
+
+          <!-- Overlay: connections + dots + tooltip (same viewBox as SVG) -->
+          <svg
+            viewBox="3600 1400 19200 13200"
+            class="absolute inset-0 w-full h-full map-overlay"
+            style="pointer-events: none;"
+          >
+            <!-- Connection lines -->
+            {connections.map(([x1,y1,x2,y2]) => (
+              <line
+                x1={x1} y1={y1} x2={x2} y2={y2}
+                stroke="rgba(255,255,255,0.18)"
+                stroke-width="50"
+                stroke-dasharray="200 280"
+              />
+            ))}
+
+            <!-- Covered dots with pulse rings -->
+            {covered.map((m) => (
+              <g class="dot-group" data-nombre={m.nombre} style="pointer-events: all; cursor: default;">
+                <circle class="pulse-ring" cx={m.cx} cy={m.cy} r="320" />
+                <circle
+                  cx={m.cx} cy={m.cy} r="150"
+                  fill="#4EB648"
+                  stroke="rgba(78,182,72,0.5)"
+                  stroke-width="80"
+                />
+              </g>
+            ))}
+
+            <!-- Juticalpa star label -->
+            <g>
+              <rect x="10063" y="12300" width="2300" height="520" rx="120"
+                fill="rgba(255,255,255,0.08)"
+                stroke="rgba(255,255,255,0.15)"
+                stroke-width="30"
+              />
+              <text x="11213" y="12620"
+                text-anchor="middle"
+                fill="rgba(255,255,255,0.75)"
+                font-size="280"
+                font-family="Oxanium, sans-serif"
+                font-weight="600"
+              >Juticalpa ★</text>
+            </g>
+          </svg>
+
+          <!-- HTML Tooltip -->
+          <div
+            id="map-tooltip"
+            class="pointer-events-none absolute hidden z-10 px-3 py-1.5 rounded-lg text-xs font-medium"
+            style="background: rgba(13,20,33,0.92); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); white-space: nowrap;"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Content column -->
+      <div class="py-16 px-6 lg:pl-0 lg:pr-12 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/5">
+
+        <p class="text-[#4EB648] text-xs font-semibold tracking-[0.25em] uppercase mb-5">
+          Cobertura regional
+        </p>
+
+        <h2 class="font-display font-black text-4xl lg:text-5xl text-white tracking-tight leading-tight mb-10">
+          14 de 23<br>municipios<br>de Olancho
+        </h2>
+
+        <!-- Progress bar -->
+        <div class="mb-8">
+          <div class="flex justify-between items-center mb-2.5">
+            <span class="text-white/40 text-xs tracking-wide">Cobertura del departamento</span>
+            <span class="text-white font-semibold text-sm">61%</span>
+          </div>
+          <div class="h-1.5 rounded-full overflow-hidden" style="background: rgba(255,255,255,0.07);">
+            <div
+              class="h-full rounded-full progress-fill"
+              style="background: linear-gradient(90deg, #0076BB, #4EB648);"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Coverage checker -->
+        <div class="rounded-xl p-5 mb-8" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
+          <p class="text-white/50 text-xs tracking-wide uppercase mb-3 font-semibold">Verificar cobertura</p>
+          <select
+            id="municipality-select"
+            class="w-full px-4 py-3 rounded-lg text-sm text-white/75 mb-3 outline-none appearance-none"
+            style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
+          >
+            <option value="">Selecciona tu municipio...</option>
+            {municipios.sort((a, b) => a.nombre.localeCompare(b.nombre)).map((m) => (
+              <option value={m.nombre}>{m.nombre}</option>
+            ))}
+          </select>
+          <button
+            id="check-coverage-btn"
+            class="w-full py-3 text-white font-semibold text-sm rounded-lg transition-all duration-200 hover:opacity-90"
+            style="background: #0076BB;"
+          >
+            Verificar disponibilidad
+          </button>
+          <div id="coverage-result" class="mt-3 text-sm text-center hidden"></div>
+        </div>
+
+        <!-- Legend -->
+        <div class="flex gap-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background: #4EB648;"></span>
+            <span class="text-white/40 text-xs">Cobertura activa</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background: #0d1e2e; border: 1px solid rgba(255,255,255,0.2);"></span>
+            <span class="text-white/40 text-xs">Próximamente</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pulse-ring {
+    fill: rgba(78, 182, 72, 0.08);
+    stroke: rgba(78, 182, 72, 0.35);
+    stroke-width: 40;
+    animation: pulse 2.6s ease-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .dot-group:nth-child(3n+1) .pulse-ring { animation-delay: 0s; }
+  .dot-group:nth-child(3n+2) .pulse-ring { animation-delay: 0.8s; }
+  .dot-group:nth-child(3n)   .pulse-ring { animation-delay: 1.6s; }
+
+  @keyframes pulse {
+    0%   { transform: scale(1);   opacity: 0.9; }
+    70%  { transform: scale(2.2); opacity: 0; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+
+  .progress-fill {
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .progress-fill.animated { width: 61%; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-ring { animation: none; }
+    .progress-fill { transition: none; }
+  }
+</style>
+
+<script>
+  // Tooltip on dot hover
+  const tooltip = document.getElementById('map-tooltip');
+  const wrap    = document.querySelector('.map-wrap') as HTMLElement | null;
+
+  document.querySelectorAll('.dot-group').forEach((g) => {
+    const nombre = (g as SVGGElement).dataset.nombre ?? '';
+
+    g.addEventListener('mouseenter', (e) => {
+      if (!tooltip || !wrap) return;
+      const wrapRect = wrap.getBoundingClientRect();
+      const dot = (e.currentTarget as SVGGElement).querySelector('circle:last-child') as SVGCircleElement | null;
+      if (!dot) return;
+      const r = dot.getBoundingClientRect();
+      tooltip.textContent = nombre;
+      tooltip.style.left      = `${r.left - wrapRect.left + r.width / 2}px`;
+      tooltip.style.top       = `${r.top  - wrapRect.top  - 36}px`;
+      tooltip.style.transform = 'translateX(-50%)';
+      tooltip.classList.remove('hidden');
+    });
+
+    g.addEventListener('mouseleave', () => tooltip?.classList.add('hidden'));
+  });
+
+  // Progress bar on scroll
+  const fill = document.querySelector('.progress-fill');
+  if (fill) {
+    new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) fill.classList.add('animated');
+    }, { threshold: 0.3 }).observe(fill);
+  }
+
+  // Coverage checker
+  const coveredSet = new Set([
+    'Campamento','El Rosario','Gualaco','Guarizama','Guata','Jano',
+    'Juticalpa','La Unión','Manto','Salamá','San Esteban',
+    'San Francisco de la Paz','Silca','Yocón',
+  ]);
+
+  document.getElementById('check-coverage-btn')?.addEventListener('click', () => {
+    const select = document.getElementById('municipality-select') as HTMLSelectElement;
+    const result = document.getElementById('coverage-result')!;
+    const val    = select?.value;
+    if (!val) {
+      result.textContent = 'Selecciona un municipio primero.';
+      result.style.color = 'rgba(255,255,255,0.35)';
+    } else if (coveredSet.has(val)) {
+      result.innerHTML   = '✓ &nbsp;Cobertura disponible en ' + val;
+      result.style.color = '#4EB648';
+    } else {
+      result.innerHTML   = '○ &nbsp;Aún no disponible — contáctanos para más info.';
+      result.style.color = 'rgba(255,255,255,0.4)';
+    }
+    result.classList.remove('hidden');
+  });
+</script>
