@@ -1,0 +1,27 @@
+---
+const stats = [
+  { label: 'Clientes satisfechos', number: '+4,000', context: 'Red más grande de Olancho',  color: 'var(--color-brand-blue)'  },
+  { label: 'Crecimiento anual',    number: '+30%',   context: 'Último año en clientes',     color: 'var(--color-brand-green)' },
+  { label: 'Municipios nuevos',    number: '+2',     context: 'Expansión en 2024',          color: 'var(--color-brand-blue)'  },
+  { label: 'Años de experiencia',  number: '+10',    context: 'Líderes en el mercado',      color: 'var(--color-brand-green)' },
+];
+---
+
+<section class="bg-brand-darker py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {stats.map((s) => (
+        <div
+          class="rounded-xl p-7"
+          style={`background: var(--color-brand-dark); border-top: 4px solid ${s.color};`}
+        >
+          <p class="text-[10px] font-bold tracking-[0.15em] uppercase mb-4" style="color: rgba(255,255,255,0.5);">
+            {s.label}
+          </p>
+          <p class="font-display font-black text-5xl text-white mb-2">{s.number}</p>
+          <p class="text-xs" style="color: rgba(255,255,255,0.35);">{s.context}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

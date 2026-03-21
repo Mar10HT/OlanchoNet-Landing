@@ -170,9 +170,9 @@ const municipios = [
             class="w-full px-4 py-3 rounded-lg text-sm text-white/75 mb-3 outline-none appearance-none"
             style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
           >
-            <option value="">Selecciona tu municipio...</option>
+            <option value="" style="background: #1a2535; color: rgba(255,255,255,0.75);">Selecciona tu municipio...</option>
             {municipios.sort((a, b) => a.nombre.localeCompare(b.nombre)).map((m) => (
-              <option value={m.nombre}>{m.nombre}</option>
+              <option value={m.nombre} style="background: #1a2535; color: rgba(255,255,255,0.9);">{m.nombre}</option>
             ))}
           </select>
           <button
