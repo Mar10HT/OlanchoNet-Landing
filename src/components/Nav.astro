@@ -65,6 +65,13 @@ const { activePage = 'home' } = Astro.props;
     </div>
   </div>
 
+  <!-- Scroll progress bar -->
+  <div
+    id="scroll-bar"
+    class="absolute bottom-0 left-0 h-[2px] w-0"
+    style="background: var(--color-brand-blue); transition: width 0.1s linear;"
+  ></div>
+
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-t border-white/10">
     <div class="px-6 py-4 flex flex-col gap-4">
@@ -118,6 +125,15 @@ const { activePage = 'home' } = Astro.props;
     iconOpen.classList.toggle('hidden', !isOpen);
     iconClose.classList.toggle('hidden', isOpen);
   });
+
+  // Scroll progress bar
+  const scrollBar = document.getElementById('scroll-bar') as HTMLElement | null;
+  function updateProgress() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    if (scrollBar) scrollBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
 
   // Close mobile menu on link click
   document.querySelectorAll('.mobile-link').forEach(link => {

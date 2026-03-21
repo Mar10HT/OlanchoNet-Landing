@@ -1,27 +1,70 @@
 ---
 const stats = [
-  { label: 'Clientes satisfechos', number: '+4,000', context: 'Red más grande de Olancho',  color: 'var(--color-brand-blue)'  },
-  { label: 'Crecimiento anual',    number: '+30%',   context: 'Último año en clientes',     color: 'var(--color-brand-green)' },
-  { label: 'Municipios nuevos',    number: '+2',     context: 'Expansión en 2024',          color: 'var(--color-brand-blue)'  },
-  { label: 'Años de experiencia',  number: '+10',    context: 'Líderes en el mercado',      color: 'var(--color-brand-green)' },
+  { label: 'Clientes satisfechos', number: '+4,000', target: 4000, prefix: '+', suffix: '',  comma: true,  context: 'Red más grande de Olancho', color: 'var(--color-brand-blue)'  },
+  { label: 'Crecimiento anual',    number: '+30%',   target: 30,   prefix: '+', suffix: '%', comma: false, context: 'Último año en clientes',    color: 'var(--color-brand-green)' },
+  { label: 'Municipios nuevos',    number: '+2',     target: 2,    prefix: '+', suffix: '',  comma: false, context: 'Expansión en 2024',          color: 'var(--color-brand-blue)'  },
+  { label: 'Años de experiencia',  number: '+10',    target: 10,   prefix: '+', suffix: '',  comma: false, context: 'Líderes en el mercado',      color: 'var(--color-brand-green)' },
 ];
 ---
 
-<section class="bg-brand-darker py-16">
+<section id="stats" class="bg-brand-darker py-16">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {stats.map((s) => (
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {stats.map((s, i) => (
         <div
-          class="rounded-xl p-7"
-          style={`background: var(--color-brand-dark); border-top: 4px solid ${s.color};`}
+          class="reveal rounded-xl p-7"
+          style={`background: var(--color-brand-dark); border-top: 4px solid ${s.color}; transition-delay: ${i * 80}ms;`}
         >
           <p class="text-[10px] font-bold tracking-[0.15em] uppercase mb-4" style="color: rgba(255,255,255,0.5);">
             {s.label}
           </p>
-          <p class="font-display font-black text-5xl text-white mb-2">{s.number}</p>
+          <p
+            class="stat-num font-display font-black text-5xl text-white mb-2"
+            data-target={s.target}
+            data-prefix={s.prefix}
+            data-suffix={s.suffix}
+            data-comma={s.comma}
+          >
+            {s.number}
+          </p>
           <p class="text-xs" style="color: rgba(255,255,255,0.35);">{s.context}</p>
         </div>
       ))}
     </div>
   </div>
 </section>
+
+<script>
+  const nums = document.querySelectorAll<HTMLElement>('.stat-num');
+  let animated = false;
+
+  const runCountUp = () => {
+    if (animated) return;
+    animated = true;
+    nums.forEach((el) => {
+      const target = parseInt(el.dataset.target ?? '0');
+      const prefix = el.dataset.prefix ?? '';
+      const suffix = el.dataset.suffix ?? '';
+      const comma  = el.dataset.comma === 'true';
+      const dur    = 1400;
+      const t0     = performance.now();
+
+      const tick = (now: number) => {
+        const p     = Math.min((now - t0) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val   = Math.round(target * eased);
+        el.textContent = prefix + (comma ? val.toLocaleString('es-HN') : String(val)) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+
+      requestAnimationFrame(tick);
+    });
+  };
+
+  const section = document.getElementById('stats');
+  if (section) {
+    new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) runCountUp();
+    }, { threshold: 0.4 }).observe(section);
+  }
+</script>

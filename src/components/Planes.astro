@@ -35,10 +35,11 @@ const baseFeatures = [
     </div>
 
     <!-- Cards grid -->
-    <div class="reveal reveal-d1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-      {plans.map((plan) => (
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+      {plans.map((plan, i) => (
         <div
-          class="flip-card cursor-pointer h-[380px]"
+          class="reveal flip-card cursor-pointer h-[380px]"
+          style={`transition-delay: ${i * 70}ms;`}
           role="button"
           tabindex="0"
           aria-label={`Plan ${plan.name}, ${plan.mbps} Mbps, L ${plan.price} por mes`}

@@ -109,8 +109,17 @@ body {
   transform: rotateY(180deg);
 }
 
+/* Hover lift — only when not flipped */
+.flip-card {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+.flip-card:not(.flipped):hover {
+  transform: translateY(-6px);
+  filter: drop-shadow(0 16px 32px rgba(0, 118, 187, 0.22));
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .flip-card-inner {
-    transition: none;
-  }
+  .flip-card-inner { transition: none; }
+  .flip-card { transition: none; }
+  .flip-card:not(.flipped):hover { transform: none; filter: none; }
 }

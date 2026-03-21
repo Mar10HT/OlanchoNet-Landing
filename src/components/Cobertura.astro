@@ -95,6 +95,7 @@ const municipios = [
             <!-- Connection lines -->
             {connections.map(([x1,y1,x2,y2]) => (
               <line
+                class="map-line"
                 x1={x1} y1={y1} x2={x2} y2={y2}
                 stroke="rgba(255,255,255,0.18)"
                 stroke-width="50"
@@ -203,6 +204,11 @@ const municipios = [
 </section>
 
 <style>
+  .map-line {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
   .pulse-ring {
     fill: rgba(78, 182, 72, 0.08);
     stroke: rgba(78, 182, 72, 0.35);
@@ -264,6 +270,19 @@ const municipios = [
     new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) fill.classList.add('animated');
     }, { threshold: 0.3 }).observe(fill);
+  }
+
+  // Animate map connection lines on scroll
+  const mapLines = document.querySelectorAll<SVGLineElement>('.map-line');
+  const coberSection = document.getElementById('cobertura');
+  if (coberSection) {
+    new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        mapLines.forEach((line, i) => {
+          setTimeout(() => { line.style.opacity = '1'; }, i * 80);
+        });
+      }
+    }, { threshold: 0.2 }).observe(coberSection);
   }
 
   // Coverage checker
