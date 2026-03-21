@@ -2,55 +2,133 @@
 ---
 
 <section
+  id="hero-section"
   class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark"
 >
-  <!-- Background grid pattern -->
+  <!-- Network particles canvas -->
+  <canvas
+    id="hero-canvas"
+    class="absolute inset-0 w-full h-full pointer-events-none"
+    aria-hidden="true"
+    style="z-index: 1;"
+  ></canvas>
+
+  <!-- Grid pattern -->
   <div
-    class="absolute inset-0 opacity-[0.04]"
-    style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 60px 60px;"
+    class="absolute inset-0 pointer-events-none"
+    style="z-index: 2; opacity: 0.035;
+      background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px);
+      background-size: 60px 60px;"
   ></div>
 
-  <!-- Radial glow from brand blue -->
+  <!-- Blue radial glow (center) -->
   <div
-    class="absolute inset-0"
-    style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0,118,187,0.18) 0%, transparent 70%);"
+    class="absolute inset-0 pointer-events-none"
+    style="z-index: 2; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0,118,187,0.30) 0%, transparent 70%);"
   ></div>
 
-  <!-- Green accent dot top-right -->
+  <!-- Orb 1: green, top-right (parallax) -->
   <div
-    class="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl"
-    style="background: var(--color-brand-green);"
+    id="hero-orb-1"
+    class="absolute rounded-full blur-3xl pointer-events-none"
+    style="z-index: 2; width: 520px; height: 520px; top: 8%; right: 8%;
+      background: var(--color-brand-green); opacity: 0.14; will-change: transform;"
   ></div>
+
+  <!-- Orb 2: blue, bottom-left (parallax) -->
+  <div
+    id="hero-orb-2"
+    class="absolute rounded-full blur-3xl pointer-events-none"
+    style="z-index: 2; width: 420px; height: 420px; bottom: 12%; left: 4%;
+      background: var(--color-brand-blue); opacity: 0.13; will-change: transform;"
+  ></div>
+
+  <!-- Floating badge: speed -->
+  <div
+    class="hero-badge hidden lg:flex absolute items-center gap-3 px-4 py-3 rounded-xl pointer-events-none"
+    style="z-index: 10; top: 34%; left: 3%; --delay: 1.2s;
+      background: rgba(13,20,33,0.88); border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+      style="background: rgba(0,118,187,0.18);"
+    >
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+        stroke="var(--color-brand-blue)" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+    </div>
+    <div>
+      <div class="text-white font-bold text-sm leading-tight">270 Mbps</div>
+      <div class="leading-tight" style="color: rgba(255,255,255,0.4); font-size: 10px;">velocidad máxima</div>
+    </div>
+  </div>
+
+  <!-- Floating badge: uptime -->
+  <div
+    class="hero-badge hidden lg:flex absolute items-center gap-3 px-4 py-3 rounded-xl pointer-events-none"
+    style="z-index: 10; top: 28%; right: 3%; --delay: 1.9s;
+      background: rgba(13,20,33,0.88); border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);"
+  >
+    <div class="relative flex-shrink-0 w-3 h-3">
+      <span class="absolute inset-0 rounded-full" style="background: var(--color-brand-green);"></span>
+      <span class="status-ping absolute inset-0 rounded-full" style="background: var(--color-brand-green);"></span>
+    </div>
+    <div>
+      <div class="text-white font-bold text-sm leading-tight">99.9% uptime</div>
+      <div class="leading-tight" style="color: rgba(255,255,255,0.4); font-size: 10px;">disponibilidad</div>
+    </div>
+  </div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center pt-20">
+  <div class="relative max-w-5xl mx-auto px-6 lg:px-8 text-center pt-20" style="z-index: 10;">
+
     <!-- Location badge -->
-    <span class="hero-enter inline-flex items-center gap-1.5 text-white/40 text-xs tracking-wide mb-8" style="animation-delay: 0ms;">
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    <span
+      class="hero-enter inline-flex items-center gap-1.5 text-white/40 text-xs tracking-wide mb-8"
+      style="animation-delay: 0ms;"
+    >
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+      </svg>
       Olancho, Honduras
     </span>
 
     <!-- Heading -->
-    <h1 class="hero-enter text-white font-display font-black leading-none mb-8" style="animation-delay: 80ms;">
+    <h1
+      class="hero-enter text-white font-display font-black leading-none mb-8"
+      style="animation-delay: 80ms;"
+    >
       <span class="block tracking-tight" style="font-size: clamp(2.75rem, 7vw + 0.5rem, 6rem);">
         Internet que
       </span>
       <span
-        class="block tracking-tight mt-2"
+        class="typewriter-line block tracking-tight mt-2"
         style="font-size: clamp(2.75rem, 7vw + 0.5rem, 6rem); color: var(--color-brand-green);"
+        aria-live="polite"
+        aria-label="conecta Olancho"
       >
-        conecta Olancho.
+        <span id="tw-text">conecta Olancho.</span><span class="tw-cursor" aria-hidden="true"></span>
       </span>
     </h1>
 
     <!-- Subtext -->
-    <p class="hero-enter text-white/60 text-lg sm:text-xl max-w-2xl mx-auto mb-12 leading-relaxed" style="animation-delay: 180ms;">
+    <p
+      class="hero-enter text-white/60 text-lg sm:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+      style="animation-delay: 180ms;"
+    >
       Llevamos conectividad de alta velocidad a hogares y empresas en 14 municipios
       del departamento. Fibra, inalámbrico, IPTV y soporte técnico local.
     </p>
 
     <!-- CTAs -->
-    <div class="hero-enter flex flex-col sm:flex-row items-center justify-center gap-4" style="animation-delay: 280ms;">
+    <div
+      class="hero-enter flex flex-col sm:flex-row items-center justify-center gap-4"
+      style="animation-delay: 280ms;"
+    >
       <a
         href="#servicios"
         class="px-8 py-3.5 text-white font-semibold text-sm tracking-wide rounded transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
@@ -66,8 +144,12 @@
       </a>
     </div>
 
-    <!-- Stats -->
-    <div id="hero-stats" class="hero-enter mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto border-t border-white/10 pt-10" style="animation-delay: 420ms;">
+    <!-- Mini stats -->
+    <div
+      id="hero-stats"
+      class="hero-enter mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto border-t border-white/10 pt-10"
+      style="animation-delay: 420ms;"
+    >
       <div>
         <div class="stat-num text-3xl font-black text-white" data-target="14">14</div>
         <div class="text-white/40 text-xs tracking-wider uppercase mt-1">Municipios</div>
@@ -84,51 +166,201 @@
   </div>
 
   <!-- Scroll indicator -->
-  <div class="hero-enter absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30" style="animation-delay: 600ms;">
+  <div
+    class="hero-enter absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 pointer-events-none"
+    style="z-index: 10; animation-delay: 600ms;"
+  >
     <span class="text-xs tracking-widest uppercase">Scroll</span>
     <div class="w-px h-8 bg-white/20 relative overflow-hidden">
       <div class="scroll-line absolute top-0 left-0 w-full h-full bg-white/60"></div>
     </div>
   </div>
+</section>
 
 <style>
   .scroll-line {
     animation: scroll-pulse 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   }
+
+  /* Typewriter blinking cursor */
+  .tw-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.82em;
+    background: currentColor;
+    margin-left: 3px;
+    vertical-align: text-bottom;
+    border-radius: 1px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* Pulsing glow on the green typewriter line */
+  .typewriter-line {
+    animation: green-pulse 3s ease-in-out infinite;
+  }
+  @keyframes green-pulse {
+    0%, 100% { filter: drop-shadow(0 0 20px rgba(78,182,72,0.25)); }
+    50%       { filter: drop-shadow(0 0 50px rgba(78,182,72,0.60)); }
+  }
+
+  /* Floating badges: fade-in then float */
+  .hero-badge {
+    opacity: 0;
+    animation:
+      badge-fade  0.8s ease var(--delay, 1.2s) forwards,
+      badge-float 5s   ease-in-out calc(var(--delay, 1.2s) + 0.9s) infinite;
+  }
+  @keyframes badge-fade  { to { opacity: 1; } }
+  @keyframes badge-float {
+    0%, 100% { transform: translateY(0px);  }
+    50%      { transform: translateY(-10px); }
+  }
+
+  /* Green status dot ping */
+  .status-ping {
+    animation: status-ping 2s ease-out infinite;
+  }
+  @keyframes status-ping {
+    0%   { transform: scale(1);   opacity: 0.55; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+
+  /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
-    .scroll-line { animation: none; opacity: 0.6; }
+    .scroll-line     { animation: none; opacity: 0.6; }
+    .tw-cursor       { animation: none; }
+    .typewriter-line { animation: none; }
+    .hero-badge      { opacity: 1; animation: none; }
+    .status-ping     { animation: none; }
   }
 </style>
 
 <script>
-  // Count-up animation for hero stats
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── 1 & 2. Canvas particles + mouse parallax (shared RAF) ──────────────
+  const canvas  = document.getElementById('hero-canvas') as HTMLCanvasElement | null;
+  const section = document.getElementById('hero-section') as HTMLElement | null;
+  const orb1    = document.getElementById('hero-orb-1')  as HTMLElement | null;
+  const orb2    = document.getElementById('hero-orb-2')  as HTMLElement | null;
+
+  if (!reduced && canvas && section) {
+    const ctx = canvas.getContext('2d')!;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let W = 0, H = 0;
+
+    const resize = () => {
+      W = canvas.offsetWidth;
+      H = canvas.offsetHeight;
+      canvas.width  = W * dpr;
+      canvas.height = H * dpr;
+      ctx.scale(dpr, dpr);
+    };
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    const nodes = Array.from({ length: 34 }, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.38,
+      vy: (Math.random() - 0.5) * 0.38,
+      r: 1.4 + Math.random() * 1.6,
+      green: Math.random() > 0.45,
+    }));
+
+    // Mouse parallax state
+    let mx = 0.5, my = 0.5, lx = 0.5, ly = 0.5;
+    section.addEventListener('mousemove', (e) => {
+      const r = section.getBoundingClientRect();
+      mx = (e.clientX - r.left) / r.width;
+      my = (e.clientY - r.top)  / r.height;
+    });
+    section.addEventListener('mouseleave', () => { mx = 0.5; my = 0.5; });
+
+    const loop = () => {
+      // Parallax
+      lx += (mx - lx) * 0.04;
+      ly += (my - ly) * 0.04;
+      if (orb1) orb1.style.transform = `translate(${(lx - 0.5) * 45}px, ${(ly - 0.5) * 28}px)`;
+      if (orb2) orb2.style.transform = `translate(${(0.5 - lx) * 32}px, ${(0.5 - ly) * 22}px)`;
+
+      // Canvas
+      ctx.clearRect(0, 0, W, H);
+
+      // Edges
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = b.x - a.x, dy = b.y - a.y;
+          const d  = Math.sqrt(dx * dx + dy * dy);
+          if (d < 140) {
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(0,118,187,${(1 - d / 140) * 0.14})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Nodes
+      nodes.forEach(n => {
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = n.green ? 'rgba(78,182,72,0.55)' : 'rgba(0,118,187,0.42)';
+        ctx.fill();
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > W) n.vx *= -1;
+        if (n.y < 0 || n.y > H) n.vy *= -1;
+      });
+
+      requestAnimationFrame(loop);
+    };
+    loop();
+  }
+
+  // ── 3. Typewriter ─────────────────────────────────────────────────────
+  const twEl = document.getElementById('tw-text');
+  if (twEl && !reduced) {
+    const phrases = ['conecta hogares.', 'conecta empresas.', 'conecta negocios.', 'conecta Olancho.'];
+    let pi = 0, ci = 0, del = false;
+
+    const tick = () => {
+      const phrase = phrases[pi];
+      twEl.textContent = del ? phrase.slice(0, --ci) : phrase.slice(0, ++ci);
+
+      let delay = del ? 35 : 80;
+      if (!del && ci === phrase.length) { delay = 2300; del = true; }
+      else if (del && ci === 0)         { del = false; pi = (pi + 1) % phrases.length; delay = 420; }
+
+      setTimeout(tick, delay);
+    };
+    setTimeout(tick, 1500);
+  }
+
+  // ── 4. Hero stats count-up ────────────────────────────────────────────
   const statsEl = document.getElementById('hero-stats');
   if (statsEl) {
-    const countObserver = new IntersectionObserver((entries) => {
+    const obs = new IntersectionObserver((entries) => {
       if (!entries[0].isIntersecting) return;
-      countObserver.disconnect();
-
-      statsEl.querySelectorAll('.stat-num').forEach(el => {
-        const target = parseInt((el as HTMLElement).dataset.target ?? '0', 10);
-        const suffix = (el as HTMLElement).dataset.suffix ?? '';
-        let current = 0;
-        const duration = 900;
-        const startTime = performance.now();
-
-        const tick = (now: number) => {
-          const progress = Math.min((now - startTime) / duration, 1);
-          const ease = 1 - Math.pow(1 - progress, 4); // ease-out-quart
-          current = Math.round(ease * target);
-          el.textContent = current + suffix;
-          if (progress < 1) requestAnimationFrame(tick);
+      obs.disconnect();
+      statsEl.querySelectorAll<HTMLElement>('.stat-num').forEach(el => {
+        const target = parseInt(el.dataset.target ?? '0', 10);
+        const suffix = el.dataset.suffix ?? '';
+        const t0 = performance.now(), dur = 900;
+        const count = (now: number) => {
+          const p = Math.min((now - t0) / dur, 1);
+          el.textContent = Math.round((1 - Math.pow(1 - p, 4)) * target) + suffix;
+          if (p < 1) requestAnimationFrame(count);
         };
-
-        // Delay start until after hero-enter animation completes
-        setTimeout(() => requestAnimationFrame(tick), 500);
+        setTimeout(() => requestAnimationFrame(count), 500);
       });
     }, { threshold: 0.5 });
-
-    countObserver.observe(statsEl);
+    obs.observe(statsEl);
   }
 </script>
-</section>
