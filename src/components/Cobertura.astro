@@ -92,16 +92,26 @@ const municipios = [
             class="absolute inset-0 w-full h-full map-overlay"
             style="pointer-events: none;"
           >
-            <!-- Connection lines -->
+            <defs>
+              <filter id="packet-glow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="90" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Base track lines (static, subtle) -->
             {connections.map(([x1,y1,x2,y2]) => (
               <line
-                class="map-line"
                 x1={x1} y1={y1} x2={x2} y2={y2}
-                stroke="rgba(255,255,255,0.18)"
-                stroke-width="50"
-                stroke-dasharray="200 280"
+                stroke="rgba(255,255,255,0.10)"
+                stroke-width="35"
               />
             ))}
+
+            <!-- JS-driven random data packets inserted here -->
 
             <!-- Covered dots with pulse rings -->
             {covered.map((m) => (
@@ -204,11 +214,6 @@ const municipios = [
 </section>
 
 <style>
-  .map-line {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-  }
-
   .pulse-ring {
     fill: rgba(78, 182, 72, 0.08);
     stroke: rgba(78, 182, 72, 0.35);
@@ -235,7 +240,7 @@ const municipios = [
   .progress-fill.animated { width: 61%; }
 
   @media (prefers-reduced-motion: reduce) {
-    .pulse-ring { animation: none; }
+    .pulse-ring    { animation: none; }
     .progress-fill { transition: none; }
   }
 </style>
@@ -272,17 +277,67 @@ const municipios = [
     }, { threshold: 0.3 }).observe(fill);
   }
 
-  // Animate map connection lines on scroll
-  const mapLines = document.querySelectorAll<SVGLineElement>('.map-line');
-  const coberSection = document.getElementById('cobertura');
-  if (coberSection) {
-    new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        mapLines.forEach((line, i) => {
-          setTimeout(() => { line.style.opacity = '1'; }, i * 80);
-        });
-      }
-    }, { threshold: 0.2 }).observe(coberSection);
+  // One packet per line, all running simultaneously, random direction each cycle
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const CONNECTIONS: [number,number,number,number][] = [
+      [10463,11948,  9723, 8716],
+      [10463,11948, 12147, 9050],
+      [10463,11948, 10600, 8428],
+      [10463,11948,  7386, 9085],
+      [10463,11948,  7365,12402],
+      [ 9723, 8716, 10600, 8428],
+      [ 9723, 8716,  8441, 9667],
+      [10600, 8428, 12147, 9050],
+      [10600, 8428,  9858, 6029],
+      [12147, 9050, 12680, 5420],
+      [12680, 5420, 15979, 4574],
+      [ 9858, 6029,  8561, 6993],
+      [ 9858, 6029, 12680, 5420],
+      [ 8561, 6993,  7131, 6514],
+      [ 7131, 6514,  6858, 8458],
+      [ 7131, 6514,  5665, 7974],
+      [ 6858, 8458,  7386, 9085],
+      [ 7386, 9085,  8441, 9667],
+      [ 7386, 9085,  7365,12402],
+    ];
+
+    const svgEl = document.querySelector<SVGSVGElement>('.map-overlay');
+
+    function runPacket(circle: SVGCircleElement, conn: [number,number,number,number]) {
+      const fwd = Math.random() > 0.5;
+      const [x1, y1, x2, y2] = fwd ? conn : [conn[2], conn[3], conn[0], conn[1]];
+      const dur = 700 + Math.random() * 900; // 0.7–1.6 s
+      const t0  = performance.now();
+
+      const tick = (now: number) => {
+        const t     = Math.min((now - t0) / dur, 1);
+        const alpha = t < 0.12 ? t / 0.12 : t > 0.88 ? (1 - t) / 0.12 : 1;
+        circle.setAttribute('cx', String(x1 + (x2 - x1) * t));
+        circle.setAttribute('cy', String(y1 + (y2 - y1) * t));
+        circle.setAttribute('opacity', String(alpha * 0.95));
+        if (t < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          circle.setAttribute('opacity', '0');
+          // Short pause before next run on the same line
+          setTimeout(() => runPacket(circle, conn), 80 + Math.random() * 300);
+        }
+      };
+      requestAnimationFrame(tick);
+    }
+
+    if (svgEl) {
+      CONNECTIONS.forEach((conn, i) => {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('r', '115');
+        circle.setAttribute('fill', '#4EB648');
+        circle.setAttribute('opacity', '0');
+        circle.setAttribute('filter', 'url(#packet-glow)');
+        svgEl.appendChild(circle);
+        // Stagger start so they're all at different phases immediately
+        setTimeout(() => runPacket(circle, conn), i * 120);
+      });
+    }
   }
 
   // Coverage checker
