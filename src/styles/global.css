@@ -32,11 +32,6 @@
 }
 
 /* ── Animations ─────────────────────────────────── */
-@keyframes fade-up-in {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes scroll-pulse {
   0%, 100% { transform: translateY(-100%); opacity: 0; }
   30%       { opacity: 1; }
@@ -44,39 +39,25 @@
   100%      { transform: translateY(100%); opacity: 0; }
 }
 
-/* Hero entrance */
+/* Hero entrance — GSAP animates from this state */
 .hero-enter {
   opacity: 0;
-  animation: fade-up-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Scroll-triggered reveals */
+/* Scroll-triggered reveals — GSAP animates from this state */
 .reveal {
   opacity: 0;
   transform: translateY(18px);
-  transition:
-    opacity  0.65s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-.reveal-d1 { transition-delay: 80ms; }
-.reveal-d2 { transition-delay: 160ms; }
-.reveal-d3 { transition-delay: 240ms; }
-.reveal-d4 { transition-delay: 320ms; }
 
 /* Reduced motion overrides */
 @media (prefers-reduced-motion: reduce) {
   .hero-enter {
-    animation: none;
     opacity: 1;
   }
-  .reveal, .reveal.is-visible {
+  .reveal {
     opacity: 1;
     transform: none;
-    transition: none;
   }
 }
 
@@ -93,10 +74,6 @@ body {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg);
 }
 .flip-card-front,
 .flip-card-back {
@@ -119,7 +96,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .flip-card-inner { transition: none; }
   .flip-card { transition: none; }
   .flip-card:not(.flipped):hover { transform: none; filter: none; }
 }

@@ -37,11 +37,6 @@ const items = [
     gap: 0;
     white-space: nowrap;
     will-change: transform;
-    animation: marquee-scroll 28s linear infinite;
-  }
-
-  .marquee-root:hover .marquee-track {
-    animation-play-state: paused;
   }
 
   .marquee-item {
@@ -62,12 +57,17 @@ const items = [
     font-size: 8px;
   }
 
-  @keyframes marquee-scroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-33.333%); }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .marquee-track { animation: none; }
-  }
 </style>
+
+<script>
+  import { gsap } from 'gsap';
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const track = document.querySelector<HTMLElement>('.marquee-track');
+  if (track && !reduced) {
+    const tl = gsap.timeline({ repeat: -1 });
+    tl.to(track, { x: () => -(track.scrollWidth / 3), duration: 28, ease: 'none' });
+    track.parentElement?.addEventListener('mouseenter', () => tl.pause());
+    track.parentElement?.addEventListener('mouseleave', () => tl.resume());
+  }
+</script>

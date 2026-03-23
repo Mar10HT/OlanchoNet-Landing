@@ -13,7 +13,7 @@ const stats = [
       {stats.map((s, i) => (
         <div
           class="reveal rounded-xl p-7"
-          style={`background: var(--color-brand-dark); border-top: 4px solid ${s.color}; transition-delay: ${i * 80}ms;`}
+          style={`background: var(--color-brand-dark); border-top: 4px solid ${s.color};`}
         >
           <p class="text-[10px] font-bold tracking-[0.15em] uppercase mb-4" style="color: rgba(255,255,255,0.5);">
             {s.label}
@@ -35,36 +35,28 @@ const stats = [
 </section>
 
 <script>
-  const nums = document.querySelectorAll<HTMLElement>('.stat-num');
-  let animated = false;
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
 
-  const runCountUp = () => {
-    if (animated) return;
-    animated = true;
-    nums.forEach((el) => {
+  const section = document.getElementById('stats');
+  if (section) {
+    const nums = section.querySelectorAll<HTMLElement>('.stat-num');
+    nums.forEach((el, i) => {
       const target = parseInt(el.dataset.target ?? '0');
       const prefix = el.dataset.prefix ?? '';
       const suffix = el.dataset.suffix ?? '';
       const comma  = el.dataset.comma === 'true';
-      const dur    = 1400;
-      const t0     = performance.now();
+      const obj    = { value: 0 };
 
-      const tick = (now: number) => {
-        const p     = Math.min((now - t0) / dur, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        const val   = Math.round(target * eased);
-        el.textContent = prefix + (comma ? val.toLocaleString('es-HN') : String(val)) + suffix;
-        if (p < 1) requestAnimationFrame(tick);
-      };
-
-      requestAnimationFrame(tick);
+      gsap.to(obj, {
+        value: target, duration: 1.4, delay: i * 0.08,
+        ease: 'power3.out', snap: { value: 1 },
+        onUpdate() {
+          el.textContent = prefix + (comma ? obj.value.toLocaleString('es-HN') : String(obj.value)) + suffix;
+        },
+        scrollTrigger: { trigger: section, start: 'top 60%', once: true },
+      });
     });
-  };
-
-  const section = document.getElementById('stats');
-  if (section) {
-    new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) runCountUp();
-    }, { threshold: 0.4 }).observe(section);
   }
 </script>

@@ -39,7 +39,6 @@ const baseFeatures = [
       {plans.map((plan, i) => (
         <div
           class="reveal flip-card cursor-pointer h-[380px]"
-          style={`transition-delay: ${i * 70}ms;`}
           role="button"
           tabindex="0"
           aria-label={`Plan ${plan.name}, ${plan.mbps} Mbps, L ${plan.price} por mes`}
@@ -141,17 +140,19 @@ const baseFeatures = [
 </section>
 
 <script>
-  document.querySelectorAll('.flip-card').forEach((card) => {
-    function toggle() {
-      card.classList.toggle('flipped');
-    }
-    card.addEventListener('click', toggle);
-    card.addEventListener('keydown', (e: Event) => {
-      const ke = e as KeyboardEvent;
-      if (ke.key === 'Enter' || ke.key === ' ') {
-        ke.preventDefault();
-        toggle();
-      }
+  import { gsap } from 'gsap';
+
+  document.querySelectorAll<HTMLElement>('.flip-card').forEach(card => {
+    let flipped = false;
+    const inner = card.querySelector<HTMLElement>('.flip-card-inner');
+    const flip = () => {
+      flipped = !flipped;
+      card.classList.toggle('flipped', flipped);
+      if (inner) gsap.to(inner, { rotationY: flipped ? 180 : 0, duration: 0.65, ease: 'power2.inOut' });
+    };
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
     });
   });
 </script>

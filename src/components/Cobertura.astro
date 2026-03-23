@@ -235,17 +235,19 @@ const municipios = [
 
   .progress-fill {
     width: 0;
-    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .progress-fill.animated { width: 61%; }
 
   @media (prefers-reduced-motion: reduce) {
     .pulse-ring    { animation: none; }
-    .progress-fill { transition: none; }
+    .progress-fill { width: 61%; }
   }
 </style>
 
 <script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
   // Tooltip on dot hover
   const tooltip = document.getElementById('map-tooltip');
   const wrap    = document.querySelector('.map-wrap') as HTMLElement | null;
@@ -270,11 +272,14 @@ const municipios = [
   });
 
   // Progress bar on scroll
-  const fill = document.querySelector('.progress-fill');
-  if (fill) {
-    new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) fill.classList.add('animated');
-    }, { threshold: 0.3 }).observe(fill);
+  const progressFill = document.querySelector<HTMLElement>('.progress-fill');
+  if (progressFill) {
+    ScrollTrigger.create({
+      trigger: progressFill,
+      start: 'top 80%',
+      once: true,
+      onEnter: () => gsap.to(progressFill, { width: '61%', duration: 1.5, ease: 'power2.out' }),
+    });
   }
 
   // One packet per line, all running simultaneously, random direction each cycle
@@ -303,27 +308,20 @@ const municipios = [
 
     const svgEl = document.querySelector<SVGSVGElement>('.map-overlay');
 
-    function runPacket(circle: SVGCircleElement, conn: [number,number,number,number]) {
+    function animatePacket(circle: SVGCircleElement, conn: [number,number,number,number]) {
       const fwd = Math.random() > 0.5;
       const [x1, y1, x2, y2] = fwd ? conn : [conn[2], conn[3], conn[0], conn[1]];
-      const dur = 700 + Math.random() * 900; // 0.7–1.6 s
-      const t0  = performance.now();
+      const dur = (700 + Math.random() * 900) / 1000;
 
-      const tick = (now: number) => {
-        const t     = Math.min((now - t0) / dur, 1);
-        const alpha = t < 0.12 ? t / 0.12 : t > 0.88 ? (1 - t) / 0.12 : 1;
-        circle.setAttribute('cx', String(x1 + (x2 - x1) * t));
-        circle.setAttribute('cy', String(y1 + (y2 - y1) * t));
-        circle.setAttribute('opacity', String(alpha * 0.95));
-        if (t < 1) {
-          requestAnimationFrame(tick);
-        } else {
-          circle.setAttribute('opacity', '0');
-          // Short pause before next run on the same line
-          setTimeout(() => runPacket(circle, conn), 80 + Math.random() * 300);
-        }
-      };
-      requestAnimationFrame(tick);
+      gsap.timeline({
+        onComplete: () => {
+          gsap.delayedCall(Math.random() * 0.3 + 0.08, () => animatePacket(circle, conn));
+        },
+      })
+        .set(circle, { attr: { cx: x1, cy: y1 }, opacity: 0 })
+        .to(circle, { attr: { cx: x2, cy: y2 }, duration: dur, ease: 'none' }, 0)
+        .to(circle, { opacity: 0.95, duration: dur * 0.12, ease: 'none' }, 0)
+        .to(circle, { opacity: 0, duration: dur * 0.12, ease: 'none' }, dur * 0.88);
     }
 
     if (svgEl) {
@@ -334,8 +332,7 @@ const municipios = [
         circle.setAttribute('opacity', '0');
         circle.setAttribute('filter', 'url(#packet-glow)');
         svgEl.appendChild(circle);
-        // Stagger start so they're all at different phases immediately
-        setTimeout(() => runPacket(circle, conn), i * 120);
+        gsap.delayedCall(i * 0.12, () => animatePacket(circle, conn));
       });
     }
   }
