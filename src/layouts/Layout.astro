@@ -10,7 +10,7 @@ const {
 } = Astro.props;
 
 const canonicalUrl = 'https://olanchonet.com';
-const ogImage = `${canonicalUrl}/images/logo-color.svg`;
+const ogImage = `${canonicalUrl}/images/og-image.png`;
 import '../styles/global.css';
 ---
 
@@ -36,10 +36,20 @@ import '../styles/global.css';
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload critical local fonts -->
+    <link rel="preload" as="font" type="font/ttf" href="/fonts/Avenir-Bold.ttf" crossorigin />
+    <link rel="preload" as="font" type="font/ttf" href="/fonts/Avenir-Light.ttf" crossorigin />
+    <!-- Non-render-blocking Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&display=swap" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&display=swap" />
+    </noscript>
   </head>
   <body class="bg-white text-gray-800">
     <slot />

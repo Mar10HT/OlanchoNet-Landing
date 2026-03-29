@@ -3,7 +3,7 @@
 
 <section
   id="hero-section"
-  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark"
+  class="relative min-h-screen flex flex-col overflow-hidden bg-brand-dark"
 >
   <!-- Network particles canvas -->
   <canvas
@@ -84,7 +84,8 @@
   </div>
 
   <!-- Content -->
-  <div class="relative max-w-5xl mx-auto px-6 lg:px-8 text-center pt-20" style="z-index: 10;">
+  <div class="flex-1 flex items-center justify-center" style="z-index: 10;">
+  <div class="relative max-w-5xl mx-auto px-6 lg:px-8 text-center pt-20 pb-8 w-full">
 
     <!-- Location badge -->
     <span
@@ -159,10 +160,11 @@
       </div>
     </div>
   </div>
+  </div>
 
   <!-- Scroll indicator -->
   <div
-    class="hero-enter absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 pointer-events-none"
+    class="hero-enter hidden sm:flex flex-col items-center gap-2 text-white/30 pointer-events-none pb-8"
     style="z-index: 10;"
   >
     <span class="text-xs tracking-widest uppercase">Scroll</span>
@@ -265,24 +267,35 @@
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     let W = 0, H = 0;
 
-    const resize = () => {
-      W = canvas.offsetWidth;
-      H = canvas.offsetHeight;
-      canvas.width  = W * dpr;
-      canvas.height = H * dpr;
-      ctx.scale(dpr, dpr);
-    };
-    resize();
-    window.addEventListener('resize', resize, { passive: true });
-
     const nodes = Array.from({ length: 34 }, () => ({
-      x: Math.random() * W,
-      y: Math.random() * H,
+      x: 0, y: 0,
       vx: (Math.random() - 0.5) * 0.38,
       vy: (Math.random() - 0.5) * 0.38,
       r: 1.4 + Math.random() * 1.6,
       green: Math.random() > 0.45,
     }));
+
+    const resize = () => {
+      const newW = canvas.offsetWidth;
+      const newH = canvas.offsetHeight;
+      if (newW === 0 || newH === 0) return;
+      // Rescatter nodes proportionally when dimensions change
+      nodes.forEach(n => {
+        n.x = W > 0 ? (n.x / W) * newW : Math.random() * newW;
+        n.y = H > 0 ? (n.y / H) * newH : Math.random() * newH;
+      });
+      W = newW;
+      H = newH;
+      canvas.width  = W * dpr;
+      canvas.height = H * dpr;
+      ctx.scale(dpr, dpr);
+    };
+
+    // Defer initial resize until layout is complete
+    requestAnimationFrame(() => {
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+    });
 
     // Mouse parallax state
     let mx = 0.5, my = 0.5, lx = 0.5, ly = 0.5;
@@ -331,7 +344,19 @@
         if (n.y < 0 || n.y > H) n.vy *= -1;
       });
     };
-    gsap.ticker.add(loop);
+
+    // Only run the animation loop while the hero is visible
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          gsap.ticker.add(loop);
+        } else {
+          gsap.ticker.remove(loop);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    visibilityObserver.observe(section);
   }
 
   // ── 4. Typewriter ──────────────────────────────────────────────────────
