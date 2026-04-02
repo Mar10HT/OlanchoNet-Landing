@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Nuestra Historia — OlanchoNet"
+  description="Conoce la historia de OlanchoNet, el proveedor de Internet con la red de fibra óptica más grande de Olancho, Honduras. Fundados en 2015, pioneros en GPON desde 2018."
+>
+  <Nav activePage="nosotros" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="pt-40 pb-24 lg:pt-48 lg:pb-32" style="background: var(--color-brand-dark);">
+      <div class="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+        <span
+          class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-8"
+          style="background: rgba(78,182,72,0.12); color: var(--color-brand-green);"
+        >
+          Fundados en 2015
+        </span>
+        <h1 class="font-display font-black text-5xl lg:text-7xl text-white tracking-tight leading-none mb-8">
+          Conectando Olancho<br/>
+          <span style="color: var(--color-brand-blue);">desde adentro</span>
+        </h1>
+        <p class="text-white/60 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
+          Somos una empresa olanchana que nació de una necesidad real, creció con tecnología propia y hoy opera la red de fibra óptica más grande del departamento.
+        </p>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="max-w-5xl mx-auto px-6 lg:px-8">
+
+        <h2 class="font-display font-black text-3xl lg:text-4xl text-gray-900 tracking-tight mb-16">
+          Nuestra historia
+        </h2>
+
+        <div class="relative">
+          <!-- Vertical line -->
+          <div class="absolute left-6 top-0 bottom-0 w-px hidden md:block" style="background: rgba(0,118,187,0.15);"></div>
+
+          <div class="space-y-16">
+
+            <!-- Origen -->
+            <div class="reveal md:pl-20 relative">
+              <div class="hidden md:flex absolute left-0 top-1 w-12 h-12 rounded-full items-center justify-center border-2 border-white"
+                style="background: var(--color-brand-blue);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="white"/>
+                </svg>
+              </div>
+              <p class="text-xs font-bold tracking-widest uppercase mb-3" style="color: var(--color-brand-blue);">El origen</p>
+              <h3 class="font-display font-bold text-2xl text-gray-900 mb-4">Una necesidad real</h3>
+              <p class="text-gray-500 leading-relaxed max-w-2xl">
+                Todo comenzó con un problema concreto: trabajar remotamente desde municipios del interior de Olancho significaba tener que viajar hasta Juticalpa cada vez que se necesitaba una conexión decente. La idea de llevar internet de calidad a esos municipios fue la semilla que dio origen a OlanchoNet.
+              </p>
+            </div>
+
+            <!-- 2015 -->
+            <div class="reveal md:pl-20 relative">
+              <div class="hidden md:flex absolute left-0 top-1 w-12 h-12 rounded-full items-center justify-center border-2 border-white"
+                style="background: var(--color-brand-blue);">
+                <span class="text-white font-black text-xs">2015</span>
+              </div>
+              <p class="text-xs font-bold tracking-widest uppercase mb-3" style="color: var(--color-brand-blue);">2015</p>
+              <h3 class="font-display font-bold text-2xl text-gray-900 mb-4">Fundación de la empresa</h3>
+              <p class="text-gray-500 leading-relaxed max-w-2xl">
+                OlanchoNet se constituye formalmente como empresa con un enfoque claro: los municipios de <strong class="text-gray-700">Guarizama, Manto y San Francisco de la Paz</strong>. Usando tecnología de redes inalámbricas — antenas punto a punto (PTP) y punto a multipunto (PTMP) — comenzamos a conectar hogares y negocios donde antes no llegaba nada.
+              </p>
+            </div>
+
+            <!-- Expansión inalámbrica -->
+            <div class="reveal md:pl-20 relative">
+              <div class="hidden md:flex absolute left-0 top-1 w-12 h-12 rounded-full items-center justify-center border-2 border-white"
+                style="background: var(--color-brand-blue);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M10.54 15.1a6 6 0 0 1 2.92 0"/><circle cx="12" cy="20" r="1" fill="white"/>
+                </svg>
+              </div>
+              <p class="text-xs font-bold tracking-widest uppercase mb-3" style="color: var(--color-brand-blue);">Crecimiento</p>
+              <h3 class="font-display font-bold text-2xl text-gray-900 mb-4">Expansión inalámbrica</h3>
+              <p class="text-gray-500 leading-relaxed max-w-2xl">
+                La demanda creció y con ella la red. OlanchoNet se expandió hacia <strong class="text-gray-700">Silca y Salamá</strong>, continuando con infraestructura inalámbrica y consolidando su presencia en la zona norte del departamento. La operación local y el conocimiento del territorio se convirtieron en nuestra mayor ventaja competitiva.
+              </p>
+            </div>
+
+            <!-- 2018 GPON -->
+            <div class="reveal md:pl-20 relative">
+              <div class="hidden md:flex absolute left-0 top-1 w-12 h-12 rounded-full items-center justify-center border-2 border-white"
+                style="background: var(--color-brand-green);">
+                <span class="text-white font-black text-xs">2018</span>
+              </div>
+              <div class="flex items-start gap-4 flex-wrap mb-4">
+                <div>
+                  <p class="text-xs font-bold tracking-widest uppercase mb-3" style="color: var(--color-brand-green);">2018 — Hito histórico</p>
+                  <h3 class="font-display font-bold text-2xl text-gray-900">Primeros en GPON en Olancho</h3>
+                </div>
+              </div>
+              <div class="rounded-2xl p-6 mb-4 max-w-2xl"
+                style="background: rgba(78,182,72,0.06); border: 1px solid rgba(78,182,72,0.2);">
+                <p class="text-sm font-semibold mb-1" style="color: var(--color-brand-green);">Pioneros en fibra óptica</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  OlanchoNet fue la <strong>primera empresa del departamento de Olancho</strong> en implementar tecnología GPON (Gigabit Passive Optical Network) — la misma infraestructura de fibra óptica que usan los grandes operadores nacionales. El despliegue comenzó en San Francisco de la Paz.
+                </p>
+              </div>
+              <p class="text-gray-500 leading-relaxed max-w-2xl">
+                Este fue un punto de quiebre: pasamos de ser un ISP inalámbrico regional a ser un operador de telecomunicaciones con infraestructura de última milla en fibra óptica, capaz de ofrecer velocidades y confiabilidad que antes no existían en el departamento.
+              </p>
+            </div>
+
+            <!-- 2022 TV Digital -->
+            <div class="reveal md:pl-20 relative">
+              <div class="hidden md:flex absolute left-0 top-1 w-12 h-12 rounded-full items-center justify-center border-2 border-white"
+                style="background: var(--color-brand-blue);">
+                <span class="text-white font-black text-xs">2022</span>
+              </div>
+              <p class="text-xs font-bold tracking-widest uppercase mb-3" style="color: var(--color-brand-blue);">2022</p>
+              <h3 class="font-display font-bold text-2xl text-gray-900 mb-4">Televisión Digital</h3>
+              <p class="text-gray-500 leading-relaxed max-w-2xl">
+                En 2022 lanzamos el proyecto de <strong class="text-gray-700">Televisión Digital</strong>, ampliando la propuesta de valor para hogares y empresas. Canales nacionales e internacionales en alta definición, disponibles a través de la misma infraestructura de red.
+              </p>
+            </div>
+
+            <!-- Hoy -->
+            <div class="reveal md:pl-20 relative">
+              <div class="hidden md:flex absolute left-0 top-1 w-12 h-12 rounded-full items-center justify-center border-2 border-white"
+                style="background: var(--color-brand-blue);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <p class="text-xs font-bold tracking-widest uppercase mb-3" style="color: var(--color-brand-blue);">Hoy</p>
+              <h3 class="font-display font-bold text-2xl text-gray-900 mb-6">La red más grande del departamento</h3>
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mb-6">
+                <div class="rounded-xl p-4 text-center" style="background: var(--color-brand-dark);">
+                  <div class="text-2xl font-black text-white">250+</div>
+                  <div class="text-white/50 text-xs mt-1">km de fibra</div>
+                </div>
+                <div class="rounded-xl p-4 text-center" style="background: var(--color-brand-dark);">
+                  <div class="text-2xl font-black text-white">14</div>
+                  <div class="text-white/50 text-xs mt-1">municipios</div>
+                </div>
+                <div class="rounded-xl p-4 text-center" style="background: var(--color-brand-dark);">
+                  <div class="text-2xl font-black text-white">25+</div>
+                  <div class="text-white/50 text-xs mt-1">colaboradores</div>
+                </div>
+                <div class="rounded-xl p-4 text-center" style="background: var(--color-brand-dark);">
+                  <div class="text-2xl font-black text-white">6</div>
+                  <div class="text-white/50 text-xs mt-1">servicios</div>
+                </div>
+              </div>
+
+              <p class="text-gray-500 leading-relaxed max-w-2xl">
+                Hoy operamos la red de fibra óptica más grande del departamento de Olancho. Entregamos enlaces dedicados a empresas y residenciales en múltiples municipios, con un equipo de más de 25 personas que conoce el territorio y está disponible cuando más se necesita.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipo / Infraestructura (placeholders para fotos) -->
+    <section class="py-24 lg:py-32" style="background: var(--color-brand-darker);">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <div class="reveal">
+            <h2 class="font-display font-black text-3xl lg:text-4xl text-white tracking-tight mb-6">
+              Nuestro equipo
+            </h2>
+            <p class="text-white/60 leading-relaxed">
+              Más de 25 personas olanchanas trabajando cada día para mantener la red en óptimas condiciones y dar el mejor servicio a hogares y empresas del departamento. Técnicos de campo, ingenieros de red, soporte al cliente y administración — todos con algo en común: conocen Olancho.
+            </p>
+          </div>
+          <div class="reveal reveal-d2">
+            <h2 class="font-display font-black text-3xl lg:text-4xl text-white tracking-tight mb-6">
+              Nuestra infraestructura
+            </h2>
+            <p class="text-white/60 leading-relaxed">
+              Red GPON propia con más de 250 km de fibra óptica desplegada a lo largo del departamento. Complementamos con enlaces inalámbricos PTP/PTMP para municipios donde la fibra aún no llega, garantizando la mayor cobertura posible.
+            </p>
+          </div>
+        </div>
+
+        <!-- Photo placeholders -->
+        <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center"
+            style="background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.1);">
+            <div class="text-center">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" class="mx-auto mb-3" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <p class="text-white/20 text-xs">Foto del equipo</p>
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center"
+            style="background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.1);">
+            <div class="text-center">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" class="mx-auto mb-3" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <p class="text-white/20 text-xs">Infraestructura de red</p>
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center"
+            style="background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.1);">
+            <div class="text-center">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" class="mx-auto mb-3" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <p class="text-white/20 text-xs">Trabajo de campo</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="py-20 bg-white">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="font-display font-black text-3xl lg:text-4xl text-gray-900 tracking-tight mb-6">
+          ¿Listo para conectarte?
+        </h2>
+        <p class="text-gray-500 mb-10 leading-relaxed">
+          Más de 10 años conectando Olancho. Verificá la cobertura en tu municipio y conocé los planes disponibles.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/#planes"
+            class="px-8 py-3.5 text-white font-semibold text-sm tracking-wide rounded transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
+            style="background: var(--color-brand-blue);"
+          >
+            Ver planes
+          </a>
+          <a
+            href="/#contacto"
+            class="px-8 py-3.5 border text-sm font-semibold tracking-wide rounded transition-all duration-200 hover:bg-gray-50 active:scale-95"
+            style="border-color: rgba(0,0,0,0.15); color: var(--color-brand-blue);"
+          >
+            Contactar
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

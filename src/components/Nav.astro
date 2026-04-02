@@ -1,6 +1,6 @@
 ---
 interface Props {
-  activePage?: 'home' | 'carreras';
+  activePage?: 'home' | 'carreras' | 'nosotros';
 }
 const { activePage = 'home' } = Astro.props;
 ---
@@ -30,12 +30,12 @@ const { activePage = 'home' } = Astro.props;
           <>
             <a href="#servicios" class="nav-link text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors">Servicios</a>
             <a href="#planes" class="nav-link text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors">Planes</a>
-            <a href="#nosotros" class="nav-link text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors">Nosotros</a>
+            <a href="/nosotros" class="nav-link text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors">Nosotros</a>
             <a href="#cobertura" class="nav-link text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors">Cobertura</a>
             <a href="#contacto" class="nav-link text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors">Contacto</a>
           </>
         )}
-        {activePage === 'carreras' && (
+        {(activePage === 'carreras' || activePage === 'nosotros') && (
           <a href="/" class="nav-link text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors">← Inicio</a>
         )}
         <a
@@ -79,12 +79,12 @@ const { activePage = 'home' } = Astro.props;
         <>
           <a href="#servicios" class="mobile-link text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide transition-colors">Servicios</a>
           <a href="#planes" class="mobile-link text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide transition-colors">Planes</a>
-          <a href="#nosotros" class="mobile-link text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide transition-colors">Nosotros</a>
+          <a href="/nosotros" class="mobile-link text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide transition-colors">Nosotros</a>
           <a href="#cobertura" class="mobile-link text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide transition-colors">Cobertura</a>
           <a href="#contacto" class="mobile-link text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide transition-colors">Contacto</a>
         </>
       )}
-      {activePage === 'carreras' && (
+      {(activePage === 'carreras' || activePage === 'nosotros') && (
         <a href="/" class="text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide transition-colors">← Inicio</a>
       )}
       <a
