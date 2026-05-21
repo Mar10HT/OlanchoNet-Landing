@@ -1,0 +1,5247 @@
+{
+  "version": "2.9",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "enabled": false,
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#FFFFFF",
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "boqYW",
+      "x": 0,
+      "y": 0,
+      "name": "OlanchoNet Landing",
+      "width": 1440,
+      "fill": "#F7FAFD",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "XLPt3",
+          "name": "Nav",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#0076BB",
+          "padding": [
+            0,
+            64
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "wIQbT",
+              "name": "Logo",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jPV0B",
+                  "name": "LogoIcon",
+                  "width": 36,
+                  "height": 42,
+                  "fill": "#00000000",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "reOp8",
+                      "name": "Swoosh",
+                      "geometry": "M13 42l0-27c0-10 9-14 17-9 9 6 8 20-3 24-8 3-14-2-14-11",
+                      "fill": "#00000000",
+                      "width": 36,
+                      "height": 42,
+                      "stroke": {
+                        "thickness": 6,
+                        "cap": "round",
+                        "fill": "#4EB648"
+                      }
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "rn13o",
+                      "name": "Dot",
+                      "fill": "#4EB648",
+                      "width": 14,
+                      "height": 14
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "UK0MO",
+                  "name": "logoText",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rxTSW",
+                      "name": "olanchoTxt",
+                      "fill": "#FFFFFF",
+                      "content": "OLANCHO",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 17,
+                      "fontWeight": "800",
+                      "letterSpacing": 0.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "5zOhq",
+                      "name": "netTxt",
+                      "fill": "#4EB648",
+                      "content": "NET",
+                      "fontFamily": "Oxanium",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wTJO0",
+              "name": "navLinks",
+              "gap": 36,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RkQKV",
+                  "name": "link1",
+                  "fill": "#FFFFFFCC",
+                  "content": "Planes",
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "m0OYl",
+                  "name": "link2",
+                  "fill": "#FFFFFFCC",
+                  "content": "Nosotros",
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "pJLEQ",
+                  "name": "link3",
+                  "fill": "#FFFFFFCC",
+                  "content": "Cobertura",
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "PVU0i",
+                  "name": "ctaBtn",
+                  "fill": "#4EB648",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "7skbe",
+                      "name": "ctaTxt",
+                      "fill": "#FFFFFF",
+                      "content": "Contratar",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GjhVR",
+          "name": "Hero",
+          "width": "fill_container",
+          "height": 680,
+          "fill": "#0076BB",
+          "gap": 60,
+          "padding": [
+            0,
+            64
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Yu7GD",
+              "name": "HeroLeft",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "pfVpR",
+                  "name": "eyebrow",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "oJfuJ",
+                      "name": "eyebrowLine",
+                      "fill": "#4EB648",
+                      "width": 22,
+                      "height": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "ShXBF",
+                      "name": "eyebrowTxt",
+                      "fill": "#4EB648",
+                      "content": "Proveedor de Internet · Olancho, Honduras",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 12,
+                      "fontWeight": "600",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rhbiG",
+                  "name": "headline",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uqgCI",
+                      "name": "h1a",
+                      "fill": "#FFFFFF",
+                      "content": "Internet que",
+                      "lineHeight": 1.05,
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 72,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "JF5Yq",
+                      "name": "h1b",
+                      "gap": 14,
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "z3UV9",
+                          "name": "h1b1",
+                          "fill": "#FFFFFF",
+                          "content": "no se",
+                          "lineHeight": 1.05,
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 72,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "jI3x5",
+                          "name": "h1b2",
+                          "fill": "#4EB648",
+                          "content": "detiene.",
+                          "lineHeight": 1.05,
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 72,
+                          "fontWeight": "800"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Ip1Jl",
+                  "name": "subTxt",
+                  "fill": "#FFFFFFB3",
+                  "textGrowth": "fixed-width",
+                  "width": 460,
+                  "content": "Conectamos a Olancho con velocidad real, estabilidad comprobada y soporte técnico local. Planes para hogares y empresas.",
+                  "lineHeight": 1.75,
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 17,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "RJinu",
+                  "name": "ctaRow",
+                  "gap": 24,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "4sQMw",
+                      "name": "primaryBtn",
+                      "fill": "#4EB648",
+                      "cornerRadius": 8,
+                      "padding": [
+                        14,
+                        28
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PeTJN",
+                          "name": "primaryBtnTxt",
+                          "fill": "#FFFFFF",
+                          "content": "Ver planes →",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "QXEaU",
+                      "name": "ghostBtn",
+                      "fill": "#FFFFFFCC",
+                      "content": "Hablar con un asesor ↗",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bdUG2",
+              "name": "HeroRight",
+              "width": 340,
+              "fill": "#FFFFFF18",
+              "cornerRadius": 18,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#FFFFFF26"
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "0LJ7y",
+                  "name": "cardTop",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "padding": [
+                    36,
+                    36,
+                    24,
+                    36
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RQe1I",
+                      "name": "cardLbl",
+                      "fill": "#FFFFFF7A",
+                      "content": "Velocidad máxima disponible",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "frame",
+                      "id": "I7bWl",
+                      "name": "speedRow",
+                      "gap": 4,
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "He0lK",
+                          "name": "speedNum",
+                          "fill": "#FFFFFF",
+                          "content": "500",
+                          "lineHeight": 1,
+                          "fontFamily": "Oxanium",
+                          "fontSize": 72,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Qidt6",
+                          "name": "speedUnit",
+                          "fill": "#4EB648",
+                          "content": "Mbps",
+                          "lineHeight": 1,
+                          "fontFamily": "Oxanium",
+                          "fontSize": 22,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "q3v4b",
+                  "name": "divider",
+                  "fill": "#FFFFFF1E",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "k45Lw",
+                  "name": "statsGrid",
+                  "width": "fill_container",
+                  "padding": [
+                    24,
+                    36,
+                    32,
+                    36
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "fnPYB",
+                      "name": "stat1",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qRzr1",
+                          "name": "s1v",
+                          "fill": "#FFFFFF",
+                          "content": "99.9%",
+                          "lineHeight": 1,
+                          "fontFamily": "Oxanium",
+                          "fontSize": 26,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "L4DSr",
+                          "name": "s1l",
+                          "fill": "#FFFFFF59",
+                          "content": "Disponibilidad",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4BdFX",
+                      "name": "stat2",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6AW7C",
+                          "name": "s2v",
+                          "fill": "#FFFFFF",
+                          "content": "<5ms",
+                          "lineHeight": 1,
+                          "fontFamily": "Oxanium",
+                          "fontSize": 26,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "298gt",
+                          "name": "s2l",
+                          "fill": "#FFFFFF59",
+                          "content": "Latencia",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QzGi7",
+                  "name": "statsGrid2",
+                  "width": "fill_container",
+                  "padding": [
+                    0,
+                    36,
+                    32,
+                    36
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "43Dl3",
+                      "name": "stat3",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "0cdTe",
+                          "name": "s3v",
+                          "fill": "#FFFFFF",
+                          "content": "24/7",
+                          "lineHeight": 1,
+                          "fontFamily": "Oxanium",
+                          "fontSize": 26,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "brbjj",
+                          "name": "s3l",
+                          "fill": "#FFFFFF59",
+                          "content": "Soporte técnico",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KFQX9",
+                      "name": "stat4",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "D5xGe",
+                          "name": "s4v",
+                          "fill": "#FFFFFF",
+                          "content": "10+",
+                          "lineHeight": 1,
+                          "fontFamily": "Oxanium",
+                          "fontSize": 26,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "44Dp0",
+                          "name": "s4l",
+                          "fill": "#FFFFFF59",
+                          "content": "Años de experiencia",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "RdsLK",
+          "name": "Planes",
+          "width": "fill_container",
+          "fill": "#F7FAFD",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "GefZV",
+              "name": "plansHdr",
+              "width": "fill_container",
+              "gap": 40,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xlQoz",
+                  "name": "plansHdrL",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "jZ8gX",
+                      "name": "plansEyebrow",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "id": "w6Chs",
+                          "name": "plansELine",
+                          "fill": "#0076BB",
+                          "width": 18,
+                          "height": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "aFWTy",
+                          "name": "plansETxt",
+                          "fill": "#0076BB",
+                          "content": "NUESTROS PLANES",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "wDBH2",
+                      "name": "plansH2",
+                      "fill": "#0C1B28",
+                      "content": "Velocidad para cada necesidad",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 42,
+                      "fontWeight": "800"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "8vme3",
+                  "name": "plansIntro",
+                  "fill": "#4A647A",
+                  "textGrowth": "fixed-width",
+                  "width": 360,
+                  "content": "Desde el usuario casual hasta la empresa exigente. Sin contratos forzosos, sin letra pequeña. Lo que contratás, lo recibís.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ehSjJ",
+              "name": "plansGrid",
+              "width": "fill_container",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "hsQ1V",
+                  "name": "PlanFeatured",
+                  "width": "fill_container",
+                  "fill": "#0076BB",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": [
+                    36,
+                    32
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "XFCRU",
+                      "name": "badge",
+                      "fill": "#4EB648",
+                      "cornerRadius": 100,
+                      "padding": [
+                        5,
+                        12
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "IVnFS",
+                          "name": "badgeTxt",
+                          "fill": "#FFFFFF",
+                          "content": "MÁS POPULAR",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 10,
+                          "fontWeight": "700",
+                          "letterSpacing": 1
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "aYbBX",
+                      "name": "planName",
+                      "fill": "#FFFFFFA0",
+                      "content": "Plan Hogar Plus",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 12,
+                      "fontWeight": "600",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "3brlp",
+                      "name": "speedRowF",
+                      "gap": 4,
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "o3egi",
+                          "name": "speedNumF",
+                          "fill": "#FFFFFF",
+                          "content": "200",
+                          "lineHeight": 1,
+                          "fontFamily": "Oxanium",
+                          "fontSize": 64,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bvn4F",
+                          "name": "speedUnitF",
+                          "fill": "#4EB648",
+                          "content": "Mbps",
+                          "lineHeight": 1,
+                          "fontFamily": "Oxanium",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FoHHf",
+                      "name": "featList",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "x5fEZ",
+                          "name": "f1",
+                          "fill": "#FFFFFFBF",
+                          "content": "✓  Descarga y subida simétricas",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "MQKzV",
+                          "name": "f2",
+                          "fill": "#FFFFFFBF",
+                          "content": "✓  IP fija incluida",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "t27tA",
+                          "name": "f3",
+                          "fill": "#FFFFFFBF",
+                          "content": "✓  Soporte técnico prioritario",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "qGmcx",
+                          "name": "f4",
+                          "fill": "#FFFFFFBF",
+                          "content": "✓  Sin límite de datos",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "dAz1O",
+                          "name": "f5",
+                          "fill": "#FFFFFFBF",
+                          "content": "✓  Router WiFi 6 incluido",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qkRf2",
+                      "name": "priceRowF",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "id": "HWTI6",
+                          "name": "priceDivF",
+                          "fill": "#FFFFFF26",
+                          "width": "fill_container",
+                          "height": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "XQItB",
+                          "name": "priceValF",
+                          "gap": 4,
+                          "alignItems": "end",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "oBvPa",
+                              "name": "priceAmtF",
+                              "fill": "#FFFFFF",
+                              "content": "L. 799",
+                              "lineHeight": 1,
+                              "fontFamily": "Oxanium",
+                              "fontSize": 32,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "f9rQN",
+                              "name": "priceMoF",
+                              "fill": "#FFFFFF59",
+                              "content": "/mes",
+                              "lineHeight": 1,
+                              "fontFamily": "Plus Jakarta Sans",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "2AEYD",
+                          "name": "ctaFBtn",
+                          "width": "fill_container",
+                          "fill": "#4EB648",
+                          "cornerRadius": 8,
+                          "padding": [
+                            14,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "qrfwu",
+                              "name": "ctaFTxt",
+                              "fill": "#FFFFFF",
+                              "content": "Contratar ahora",
+                              "fontFamily": "Plus Jakarta Sans",
+                              "fontSize": 15,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vzgx8",
+                  "name": "PlansRight",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "7Ivdz",
+                      "name": "PlanBasico",
+                      "width": "fill_container",
+                      "fill": "#E8F4FB",
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 28,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ipfLn",
+                          "name": "planBName",
+                          "fill": "#4A647A",
+                          "content": "Plan Básico",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "HsjJu",
+                          "name": "planBSpeed",
+                          "gap": 4,
+                          "alignItems": "end",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "XMmMO",
+                              "name": "planBNum",
+                              "fill": "#0C1B28",
+                              "content": "50",
+                              "lineHeight": 1,
+                              "fontFamily": "Oxanium",
+                              "fontSize": 52,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "text",
+                              "id": "xN714",
+                              "name": "planBUnit",
+                              "fill": "#0076BB",
+                              "content": "Mbps",
+                              "lineHeight": 1,
+                              "fontFamily": "Oxanium",
+                              "fontSize": 18,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "k04e6",
+                          "name": "planBFeats",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 7,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "e9uJ2",
+                              "name": "bf1",
+                              "fill": "#4A647A",
+                              "content": "✓  Navegación y streaming HD",
+                              "fontFamily": "Plus Jakarta Sans",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "7dXWC",
+                              "name": "bf2",
+                              "fill": "#4A647A",
+                              "content": "✓  Ideal para 1–3 usuarios",
+                              "fontFamily": "Plus Jakarta Sans",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "VU2EX",
+                              "name": "bf3",
+                              "fill": "#4A647A",
+                              "content": "✓  Soporte técnico incluido",
+                              "fontFamily": "Plus Jakarta Sans",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "CIJ55",
+                          "name": "planBBottom",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 10,
+                          "children": [
+                            {
+                              "type": "rectangle",
+                              "id": "Nj3cq",
+                              "name": "planBDiv",
+                              "fill": "#0076BB26",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "dq7a7",
+                              "name": "planBPrice",
+                              "gap": 4,
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Cd7Md",
+                                  "name": "planBAmt",
+                                  "fill": "#0C1B28",
+                                  "content": "L. 399",
+                                  "lineHeight": 1,
+                                  "fontFamily": "Oxanium",
+                                  "fontSize": 26,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Ng55z",
+                                  "name": "planBMo",
+                                  "fill": "#4A647A",
+                                  "content": "/mes",
+                                  "lineHeight": 1,
+                                  "fontFamily": "Plus Jakarta Sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "VWORT",
+                              "name": "planBCta",
+                              "width": "fill_container",
+                              "fill": "#0076BB",
+                              "cornerRadius": 8,
+                              "padding": [
+                                12,
+                                0
+                              ],
+                              "justifyContent": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "dkBng",
+                                  "name": "planBCtaTxt",
+                                  "fill": "#FFFFFF",
+                                  "content": "Contratar",
+                                  "fontFamily": "Plus Jakarta Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "idv8m",
+                      "name": "PlanEmpresarial",
+                      "width": "fill_container",
+                      "fill": "#EEF6EE",
+                      "cornerRadius": 16,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 28,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "2I2sU",
+                          "name": "planEName",
+                          "fill": "#3a9235",
+                          "content": "Plan Empresarial",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Y1B16",
+                          "name": "planESpeed",
+                          "gap": 4,
+                          "alignItems": "end",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jcUs3",
+                              "name": "planENum",
+                              "fill": "#0C1B28",
+                              "content": "500",
+                              "lineHeight": 1,
+                              "fontFamily": "Oxanium",
+                              "fontSize": 52,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "text",
+                              "id": "mRE8j",
+                              "name": "planEUnit",
+                              "fill": "#4EB648",
+                              "content": "Mbps",
+                              "lineHeight": 1,
+                              "fontFamily": "Oxanium",
+                              "fontSize": 18,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ZnuSZ",
+                          "name": "planEFeats",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 7,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "kLtz3",
+                              "name": "ef1",
+                              "fill": "#4A647A",
+                              "content": "✓  Ancho de banda dedicado",
+                              "fontFamily": "Plus Jakarta Sans",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "zTi8w",
+                              "name": "ef2",
+                              "fill": "#4A647A",
+                              "content": "✓  SLA garantizado",
+                              "fontFamily": "Plus Jakarta Sans",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "K3vz3",
+                              "name": "ef3",
+                              "fill": "#4A647A",
+                              "content": "✓  Soporte 24/7 exclusivo",
+                              "fontFamily": "Plus Jakarta Sans",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "0U2f0",
+                          "name": "planEBottom",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 10,
+                          "children": [
+                            {
+                              "type": "rectangle",
+                              "id": "ikzQd",
+                              "name": "planEDiv",
+                              "fill": "#4EB64826",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "text",
+                              "id": "5IFSd",
+                              "name": "planEPriceLabel",
+                              "fill": "#0C1B28",
+                              "content": "Precio a consultar",
+                              "lineHeight": 1,
+                              "fontFamily": "Oxanium",
+                              "fontSize": 20,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "AqX2C",
+                              "name": "planECta",
+                              "width": "fill_container",
+                              "fill": "#4EB648",
+                              "cornerRadius": 8,
+                              "padding": [
+                                12,
+                                0
+                              ],
+                              "justifyContent": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ognZh",
+                                  "name": "planECtaTxt",
+                                  "fill": "#FFFFFF",
+                                  "content": "Solicitar cotización",
+                                  "fontFamily": "Plus Jakarta Sans",
+                                  "fontSize": 14,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "5hkdb",
+          "name": "Features",
+          "width": "fill_container",
+          "fill": "#0C1B28",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "UST9p",
+              "name": "featHdr",
+              "width": "fill_container",
+              "gap": 40,
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "saavx",
+                  "name": "featHdrL",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "qCBLo",
+                      "name": "featEyebrow",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "id": "CsKdb",
+                          "name": "featELine",
+                          "fill": "#4EB648",
+                          "width": 18,
+                          "height": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "GJX59",
+                          "name": "featETxt",
+                          "fill": "#4EB648",
+                          "content": "POR QUÉ OLANCHONET",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "lWEa2",
+                      "name": "featH2",
+                      "fill": "#FFFFFF",
+                      "content": "Tecnología local,\nalcance sin límites",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 42,
+                      "fontWeight": "800"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "iQccM",
+                  "name": "featIntro",
+                  "fill": "#FFFFFF73",
+                  "textGrowth": "fixed-width",
+                  "width": 340,
+                  "content": "Somos el proveedor de internet con mayor cobertura en Olancho. Infraestructura propia, equipo humano propio.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "kzXpP",
+              "name": "featCards",
+              "clip": true,
+              "width": "fill_container",
+              "cornerRadius": 14,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#FFFFFF12"
+              },
+              "gap": 2,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "C9nKx",
+                  "name": "Feat1",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF08",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": [
+                    36,
+                    32
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "FZPYA",
+                      "name": "fi1bg",
+                      "width": 42,
+                      "height": 42,
+                      "fill": "#4EB64820",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "pVDZA",
+                          "name": "fi1",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "zap",
+                          "iconFontFamily": "lucide",
+                          "fill": "#4EB648"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "H3FbC",
+                      "name": "ft1",
+                      "fill": "#FFFFFF",
+                      "content": "Alta velocidad garantizada",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 17,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "3xEzZ",
+                      "name": "fd1",
+                      "fill": "#FFFFFF73",
+                      "textGrowth": "fixed-width",
+                      "width": 280,
+                      "content": "Velocidades simétricas de hasta 500 Mbps. Lo que contratás es lo que medís. Sin throttling.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nunzL",
+                  "name": "Feat2",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF05",
+                  "stroke": {
+                    "thickness": {
+                      "left": 1
+                    },
+                    "fill": "#FFFFFF12"
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": [
+                    36,
+                    32
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "6X046",
+                      "name": "fi2bg",
+                      "width": 42,
+                      "height": 42,
+                      "fill": "#4EB64820",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "Lp9AZ",
+                          "name": "fi2",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "shield",
+                          "iconFontFamily": "lucide",
+                          "fill": "#4EB648"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "k2vbw",
+                      "name": "ft2",
+                      "fill": "#FFFFFF",
+                      "content": "Red confiable y segura",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 17,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "A6xNx",
+                      "name": "fd2",
+                      "fill": "#FFFFFF73",
+                      "textGrowth": "fixed-width",
+                      "width": 280,
+                      "content": "Infraestructura redundante con 99.9% de disponibilidad. Tu negocio no puede esperar, y nuestra red lo sabe.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zZuEA",
+                  "name": "Feat3",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF03",
+                  "stroke": {
+                    "thickness": {
+                      "left": 1
+                    },
+                    "fill": "#FFFFFF12"
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": [
+                    36,
+                    32
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "TFqXG",
+                      "name": "fi3bg",
+                      "width": 42,
+                      "height": 42,
+                      "fill": "#4EB64820",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "0g7RM",
+                          "name": "fi3",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "users",
+                          "iconFontFamily": "lucide",
+                          "fill": "#4EB648"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "AAndi",
+                      "name": "ft3",
+                      "fill": "#FFFFFF",
+                      "content": "Soporte humano y local",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 17,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "f2nY1",
+                      "name": "fd3",
+                      "fill": "#FFFFFF73",
+                      "textGrowth": "fixed-width",
+                      "width": 280,
+                      "content": "Nuestro equipo técnico está en Olancho. Sin call centers externos. Asistencia real de personas reales.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "bFp5R",
+          "name": "CTA",
+          "width": "fill_container",
+          "fill": "#4EB648",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            96,
+            64
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "6GkQJ",
+              "name": "ctaH2",
+              "fill": "#FFFFFF",
+              "content": "¿Listo para conectarte?",
+              "lineHeight": 1.08,
+              "fontFamily": "Plus Jakarta Sans",
+              "fontSize": 52,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "CxYWt",
+              "name": "ctaSub",
+              "fill": "#FFFFFFCC",
+              "textGrowth": "fixed-width",
+              "width": 500,
+              "content": "Hablá con un asesor y encontrá el plan perfecto para tu hogar o negocio. Sin compromisos.",
+              "lineHeight": 1.7,
+              "textAlign": "center",
+              "fontFamily": "Plus Jakarta Sans",
+              "fontSize": 17,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "Z1kpJ",
+              "name": "ctaSpace",
+              "fill": "#00000000",
+              "width": 1,
+              "height": 8
+            },
+            {
+              "type": "frame",
+              "id": "BgUAn",
+              "name": "ctaWBtn",
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "padding": [
+                16,
+                36
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "6KWeg",
+                  "name": "ctaWTxt",
+                  "fill": "#3a9235",
+                  "content": "Llamanos ahora →",
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "vTZIg",
+          "name": "Footer",
+          "width": "fill_container",
+          "fill": "#0C1B28",
+          "layout": "vertical",
+          "padding": [
+            64,
+            64,
+            32,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "8n9Zg",
+              "name": "footerTop",
+              "width": "fill_container",
+              "gap": 48,
+              "padding": [
+                0,
+                0,
+                48,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "3qSw2",
+                  "name": "footerBrand",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Jb7HR",
+                      "name": "footerLogoRow",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "vxDE5",
+                          "name": "fLogoOlancho",
+                          "fill": "#FFFFFF",
+                          "content": "OLANCHO",
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": 15,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bqm6K",
+                          "name": "fLogoNet",
+                          "fill": "#4EB648",
+                          "content": "NET",
+                          "fontFamily": "Oxanium",
+                          "fontSize": 15,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "oLtrY",
+                      "name": "footerTagline",
+                      "fill": "#FFFFFF47",
+                      "textGrowth": "fixed-width",
+                      "width": 280,
+                      "content": "Proveedor de servicios de internet en Olancho, Honduras. Conectando comunidades con tecnología de punta.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gFXJS",
+                  "name": "footerCol1",
+                  "width": 160,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pOQro",
+                      "name": "fc1H",
+                      "fill": "#FFFFFF47",
+                      "content": "SERVICIOS",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "aipSP",
+                      "name": "fc1L1",
+                      "fill": "#FFFFFF80",
+                      "content": "Internet Residencial",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "PlKWZ",
+                      "name": "fc1L2",
+                      "fill": "#FFFFFF80",
+                      "content": "Internet Empresarial",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "zsZYI",
+                      "name": "fc1L3",
+                      "fill": "#FFFFFF80",
+                      "content": "Fibra Óptica",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "nzhBU",
+                      "name": "fc1L4",
+                      "fill": "#FFFFFF80",
+                      "content": "IP Dedicada",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TneOv",
+                  "name": "footerCol2",
+                  "width": 160,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NUqEQ",
+                      "name": "fc2H",
+                      "fill": "#FFFFFF47",
+                      "content": "CONTACTO",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "xyY6D",
+                      "name": "fc2L1",
+                      "fill": "#FFFFFF80",
+                      "content": "+504 2200-0000",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Bautl",
+                      "name": "fc2L2",
+                      "fill": "#FFFFFF80",
+                      "content": "info@olanchonet.hn",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "6RKcN",
+                      "name": "fc2L3",
+                      "fill": "#FFFFFF80",
+                      "content": "Juticalpa, Olancho",
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "2zBLJ",
+              "name": "footerDiv",
+              "fill": "#FFFFFF14",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "NWTdZ",
+              "name": "footerBottom",
+              "width": "fill_container",
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "El7Lv",
+                  "name": "footerCopy",
+                  "fill": "#FFFFFF47",
+                  "content": "© 2024 OlanchoNet. Todos los derechos reservados.",
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "LhWjt",
+                  "name": "footerMade",
+                  "fill": "#FFFFFF47",
+                  "content": "Hecho en Honduras 🇭🇳",
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Uf2ql",
+      "x": 1600,
+      "y": 0,
+      "name": "OlanchoNet Landing v2",
+      "width": 1440,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "B19s4",
+          "name": "Nav",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#0A1628",
+          "padding": [
+            0,
+            64
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "RaZqm",
+              "name": "Logo area",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jg20L",
+                  "name": "Logo mark",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "FgUIU",
+                      "name": "lm1",
+                      "fill": "#4EB648",
+                      "width": 8,
+                      "height": 24
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "CmrmH",
+                      "name": "lm2",
+                      "opacity": 0.6,
+                      "fill": "#4EB648",
+                      "width": 8,
+                      "height": 18
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "Bgw06",
+                      "name": "lm3",
+                      "fill": "#0076BB",
+                      "width": 8,
+                      "height": 30
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "0eIrh",
+                      "name": "lm4",
+                      "opacity": 0.6,
+                      "fill": "#0076BB",
+                      "width": 8,
+                      "height": 20
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CvRQa",
+                  "name": "logoText",
+                  "layout": "vertical",
+                  "gap": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fUJB3",
+                      "name": "logoName",
+                      "fill": "#FFFFFF",
+                      "content": "OLANCHONET",
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "800",
+                      "letterSpacing": 3
+                    },
+                    {
+                      "type": "text",
+                      "id": "0kkh1",
+                      "name": "logoSub",
+                      "fill": "#ffffff73",
+                      "content": "NETWORKS",
+                      "fontFamily": "Outfit",
+                      "fontSize": 8,
+                      "fontWeight": "300",
+                      "letterSpacing": 5
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "5nJTV",
+              "name": "navLinks",
+              "gap": 36,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VFQx5",
+                  "name": "l1",
+                  "fill": "#ffffffa6",
+                  "content": "Servicios",
+                  "fontFamily": "Outfit",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "1JcZr",
+                  "name": "l2",
+                  "fill": "#ffffffa6",
+                  "content": "Nosotros",
+                  "fontFamily": "Outfit",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "Tgq21",
+                  "name": "l3",
+                  "fill": "#ffffffa6",
+                  "content": "Cobertura",
+                  "fontFamily": "Outfit",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "C22fJ",
+                  "name": "l4",
+                  "fill": "#ffffffa6",
+                  "content": "Contacto",
+                  "fontFamily": "Outfit",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "UJMEC",
+              "name": "navCta",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jZquA",
+                  "name": "carrerasBtn",
+                  "fill": "#ffffff14",
+                  "cornerRadius": 6,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#ffffff26"
+                  },
+                  "padding": [
+                    8,
+                    20
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ZQH0x",
+                      "name": "carrText",
+                      "fill": "#ffffffcc",
+                      "content": "Carreras",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aGSMq",
+                  "name": "ctaBtn",
+                  "fill": "#0076BB",
+                  "cornerRadius": 6,
+                  "padding": [
+                    8,
+                    20
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tfW3w",
+                      "name": "ctaBtnText",
+                      "fill": "#FFFFFF",
+                      "content": "Contactar",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "fp9jI",
+          "name": "Hero",
+          "clip": true,
+          "width": "fill_container",
+          "height": 760,
+          "fill": "#0A1628",
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "847wr",
+              "x": 0,
+              "y": 0,
+              "name": "hero bg gradient",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "radial",
+                "enabled": true,
+                "rotation": 0,
+                "size": {
+                  "width": 1.2,
+                  "height": 1.2
+                },
+                "colors": [
+                  {
+                    "color": "#0D2D5E",
+                    "position": 0
+                  },
+                  {
+                    "color": "#0A1628",
+                    "position": 1
+                  }
+                ],
+                "center": {
+                  "x": 0.25
+                }
+              },
+              "width": 1440,
+              "height": 760
+            },
+            {
+              "type": "ellipse",
+              "id": "PKag8",
+              "x": -100,
+              "y": 200,
+              "name": "blue glow",
+              "opacity": 0.07,
+              "fill": "#0076BB",
+              "width": 700,
+              "height": 500,
+              "effect": {
+                "type": "blur",
+                "radius": 80
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "dRU2M",
+              "x": 900,
+              "y": -100,
+              "name": "green glow",
+              "opacity": 0.08,
+              "fill": "#4EB648",
+              "width": 500,
+              "height": 400,
+              "effect": {
+                "type": "blur",
+                "radius": 80
+              }
+            },
+            {
+              "type": "rectangle",
+              "id": "aP3wm",
+              "x": 0,
+              "y": 0,
+              "name": "dot grid",
+              "opacity": 0.035,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/svg%3E",
+                "mode": "fill"
+              },
+              "width": 1440,
+              "height": 760
+            },
+            {
+              "type": "rectangle",
+              "id": "Ix8V1",
+              "x": 0,
+              "y": 756,
+              "name": "bottom line",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 90,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#ffffff00",
+                    "position": 0
+                  },
+                  {
+                    "color": "#ffffff14",
+                    "position": 0.5
+                  },
+                  {
+                    "color": "#ffffff00",
+                    "position": 1
+                  }
+                ]
+              },
+              "width": 1440,
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "2qbEe",
+              "x": 120,
+              "y": 160,
+              "name": "Hero content",
+              "width": 640,
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CpP9C",
+                  "name": "heroEyebrow",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "XYuhT",
+                      "name": "eyebrowLine",
+                      "fill": "#4EB648",
+                      "width": 24,
+                      "height": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "Wmvke",
+                      "name": "eyebrowText",
+                      "fill": "#4EB648",
+                      "content": "Departamento de Olancho, Honduras",
+                      "fontFamily": "Outfit",
+                      "fontSize": 12,
+                      "fontWeight": "600",
+                      "letterSpacing": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "JskJv",
+                  "name": "heroH1",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": 640,
+                  "content": "Internet que\nno se detiene.",
+                  "lineHeight": 1,
+                  "fontFamily": "Outfit",
+                  "fontSize": 80,
+                  "fontWeight": "800",
+                  "letterSpacing": -2
+                },
+                {
+                  "type": "text",
+                  "id": "FXXON",
+                  "name": "heroSub",
+                  "fill": "#ffffff8c",
+                  "textGrowth": "fixed-width",
+                  "width": 520,
+                  "content": "Conectividad de alta velocidad para hogares y empresas en 18 municipios del departamento. Fibra, inalámbrico, IPTV y soporte técnico local.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Outfit",
+                  "fontSize": 17,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "CFbzk",
+                  "name": "heroBtns",
+                  "gap": 14,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "RIMsK",
+                      "name": "btnPrimary",
+                      "fill": "#0076BB",
+                      "cornerRadius": 8,
+                      "padding": [
+                        14,
+                        32
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Wc9d7",
+                          "name": "btnPrimaryText",
+                          "fill": "#FFFFFF",
+                          "content": "Ver servicios",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "JDCOF",
+                      "name": "btnSecondary",
+                      "fill": "#ffffff00",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#ffffff33"
+                      },
+                      "padding": [
+                        14,
+                        32
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Ghqie",
+                          "name": "btnSecondaryText",
+                          "fill": "#ffffffb3",
+                          "content": "Contactar",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "JkDsy",
+              "x": 880,
+              "y": 180,
+              "name": "Hero right",
+              "width": 420,
+              "height": 400,
+              "layout": "vertical",
+              "gap": 20
+            },
+            {
+              "type": "frame",
+              "id": "aomdp",
+              "x": 880,
+              "y": 180,
+              "name": "Stats card",
+              "width": 420,
+              "height": 200,
+              "fill": "#ffffff0d",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#ffffff14"
+              },
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "JUYax",
+              "x": 880,
+              "y": 408,
+              "name": "Stats row",
+              "width": 420,
+              "height": "fit_content(80)"
+            },
+            {
+              "type": "frame",
+              "id": "4muFX",
+              "x": 880,
+              "y": 408,
+              "name": "stat1",
+              "width": 140,
+              "layout": "vertical",
+              "gap": 4,
+              "padding": [
+                20,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fyphQ",
+                  "name": "stat1Num",
+                  "fill": "#FFFFFF",
+                  "content": "18",
+                  "fontFamily": "Outfit",
+                  "fontSize": 44,
+                  "fontWeight": "800",
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "text",
+                  "id": "nMNMi",
+                  "name": "stat1Label",
+                  "fill": "#ffffff73",
+                  "content": "Municipios",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "QyNnC",
+              "x": 1020,
+              "y": 408,
+              "name": "divider1",
+              "fill": "#ffffff1a",
+              "width": 1,
+              "height": 80
+            },
+            {
+              "type": "frame",
+              "id": "dTzPf",
+              "x": 1021,
+              "y": 408,
+              "name": "stat2",
+              "width": 140,
+              "layout": "vertical",
+              "gap": 4,
+              "padding": [
+                20,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8i6mB",
+                  "name": "stat2Num",
+                  "fill": "#FFFFFF",
+                  "content": "10+",
+                  "fontFamily": "Outfit",
+                  "fontSize": 44,
+                  "fontWeight": "800",
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "text",
+                  "id": "rHrOK",
+                  "name": "stat2Label",
+                  "fill": "#ffffff73",
+                  "content": "Años operando",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "pERkD",
+              "x": 1161,
+              "y": 408,
+              "name": "divider2",
+              "fill": "#ffffff1a",
+              "width": 1,
+              "height": 80
+            },
+            {
+              "type": "frame",
+              "id": "OfRkY",
+              "x": 1162,
+              "y": 408,
+              "name": "stat3",
+              "width": 138,
+              "layout": "vertical",
+              "gap": 4,
+              "padding": [
+                20,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vbPDQ",
+                  "name": "stat3Num",
+                  "fill": "#4EB648",
+                  "content": "6",
+                  "fontFamily": "Outfit",
+                  "fontSize": 44,
+                  "fontWeight": "800",
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "text",
+                  "id": "p9efq",
+                  "name": "stat3Label",
+                  "fill": "#ffffff73",
+                  "content": "Servicios",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 12,
+              "id": "Oh8pV",
+              "x": 880,
+              "y": 408,
+              "name": "stats border",
+              "fill": "#ffffff00",
+              "width": 420,
+              "height": 80,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#ffffff0f"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "VOeCh",
+              "x": 880,
+              "y": 180,
+              "name": "Hero image",
+              "metadata": {
+                "type": "unsplash",
+                "username": "juvnsky",
+                "link": "https://unsplash.com/@juvnsky",
+                "author": "Anton Maksimov 5642.su"
+              },
+              "clip": true,
+              "width": 420,
+              "height": 200,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1599474401169-fabd05f339d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzM4ODk4OTZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "cornerRadius": 16,
+              "layout": "vertical"
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 16,
+              "id": "XLBTX",
+              "x": 880,
+              "y": 180,
+              "name": "img overlay",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 0,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#0A162866",
+                    "position": 0
+                  },
+                  {
+                    "color": "#0A1628CC",
+                    "position": 1
+                  }
+                ]
+              },
+              "width": 420,
+              "height": 200
+            },
+            {
+              "type": "frame",
+              "id": "42WhI",
+              "x": 894,
+              "y": 350,
+              "name": "tag line",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "VNnhw",
+                  "name": "dotGreen",
+                  "fill": "#4EB648",
+                  "width": 6,
+                  "height": 6
+                },
+                {
+                  "type": "text",
+                  "id": "KSNdt",
+                  "name": "tagText",
+                  "fill": "#ffffffb3",
+                  "content": "Red activa en 18 municipios",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pyYDY",
+          "name": "Servicios",
+          "width": "fill_container",
+          "height": 890,
+          "fill": "#F8F9FB",
+          "layout": "vertical",
+          "gap": 64,
+          "padding": [
+            96,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "FMpPS",
+              "name": "Section header",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "qbJv0",
+                  "name": "svcHeaderLeft",
+                  "width": 560,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "C0w5C",
+                      "name": "svcEyebrow",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "id": "hMKFH",
+                          "name": "svcEyeLine",
+                          "fill": "#0076BB",
+                          "width": 20,
+                          "height": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "AlUqi",
+                          "name": "svcEyeText",
+                          "fill": "#0076BB",
+                          "content": "LO QUE OFRECEMOS",
+                          "fontFamily": "Outfit",
+                          "fontSize": 11,
+                          "fontWeight": "700",
+                          "letterSpacing": 2.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "JKad9",
+                      "name": "svcTitle",
+                      "fill": "#0A1628",
+                      "textGrowth": "fixed-width",
+                      "width": 480,
+                      "content": "Soluciones para cada necesidad",
+                      "lineHeight": 1.05,
+                      "fontFamily": "Outfit",
+                      "fontSize": 48,
+                      "fontWeight": "800",
+                      "letterSpacing": -1
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "5JwyL",
+                  "name": "svcHeaderRight",
+                  "width": 380,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "aaVey",
+                      "name": "svcDesc",
+                      "fill": "#6B7280",
+                      "textGrowth": "fixed-width",
+                      "width": 340,
+                      "content": "Desde conectividad residencial hasta infraestructura empresarial, somos el socio tecnológico de Olancho.",
+                      "lineHeight": 1.6,
+                      "textAlign": "right",
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "JWhoc",
+                      "name": "svcCta",
+                      "fill": "#0A1628",
+                      "cornerRadius": 8,
+                      "padding": [
+                        10,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "tVF4p",
+                          "name": "svcCtaText",
+                          "fill": "#FFFFFF",
+                          "content": "Consultar",
+                          "fontFamily": "Outfit",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "yYrs9",
+              "layoutPosition": "absolute",
+              "x": 120,
+              "y": 270,
+              "name": "bentoGrid",
+              "width": 1200,
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ATWWX",
+                  "name": "r1",
+                  "width": "fill_container",
+                  "height": 280,
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "yGOTd",
+                      "name": "Fibra Empresarial",
+                      "width": 592,
+                      "height": "fill_container",
+                      "fill": "#0076BB",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 20,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "QUvto",
+                          "name": "svc2Icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "building-2",
+                          "iconFontFamily": "lucide",
+                          "fill": "#ffffffe6"
+                        },
+                        {
+                          "type": "text",
+                          "id": "HvfKQ",
+                          "name": "svc2Title",
+                          "fill": "#FFFFFF",
+                          "content": "Fibra Empresarial",
+                          "fontFamily": "Outfit",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "5jEOM",
+                          "name": "svc2Desc",
+                          "fill": "#ffffffb3",
+                          "textGrowth": "fixed-width",
+                          "width": 528,
+                          "content": "SLA garantizado, IP fija, ancho de banda simétrico y atención prioritaria 24/7.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VLTKD",
+                          "name": "svc2Tag",
+                          "fill": "#ffffff26",
+                          "cornerRadius": 20,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "EmDM5",
+                              "name": "svc2TagText",
+                              "fill": "#FFFFFF",
+                              "content": "B2B",
+                              "fontFamily": "Outfit",
+                              "fontSize": 11,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xGfI9",
+                      "name": "Internet Residencial",
+                      "width": 288,
+                      "height": "fill_container",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 20,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "w8Q6d",
+                          "name": "svc1Icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "house",
+                          "iconFontFamily": "lucide",
+                          "fill": "#4EB648"
+                        },
+                        {
+                          "type": "text",
+                          "id": "WMrFV",
+                          "name": "svc1Title",
+                          "fill": "#0A1628",
+                          "content": "Internet Residencial",
+                          "fontFamily": "Outfit",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "764hf",
+                          "name": "svc1Desc",
+                          "fill": "#6B7280",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Planes desde 10 hasta 100 Mbps. Instalación incluida, soporte local y sin cortes inesperados.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kpfKX",
+                          "name": "svc1Tag",
+                          "fill": "#4eb6481a",
+                          "cornerRadius": 20,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "XUUFL",
+                              "name": "svc1TagText",
+                              "fill": "#4EB648",
+                              "content": "B2C",
+                              "fontFamily": "Outfit",
+                              "fontSize": 11,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Hej8x",
+                      "name": "IPTV",
+                      "width": 288,
+                      "height": "fill_container",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 20,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "LvVY8",
+                          "name": "svc5Icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "tv",
+                          "iconFontFamily": "lucide",
+                          "fill": "#0076BB"
+                        },
+                        {
+                          "type": "text",
+                          "id": "UDwp1",
+                          "name": "svc5Title",
+                          "fill": "#0A1628",
+                          "content": "IPTV",
+                          "fontFamily": "Outfit",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "LAOka",
+                          "name": "svc5Desc",
+                          "fill": "#6B7280",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Televisión por internet en alta definición. Canales nacionales e internacionales, compatible con múltiples dispositivos.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "2hQh2",
+                          "name": "svc5Tag",
+                          "fill": "#0076bb1a",
+                          "cornerRadius": 20,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "sNsQt",
+                              "name": "svc5TagText",
+                              "fill": "#0076BB",
+                              "content": "B2C / B2B",
+                              "fontFamily": "Outfit",
+                              "fontSize": 11,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pQiBe",
+                  "name": "r2",
+                  "width": "fill_container",
+                  "height": 240,
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "O3zO4",
+                      "name": "Diseño de Redes",
+                      "width": 288,
+                      "height": "fill_container",
+                      "fill": "#0A1628",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 20,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "qoaBM",
+                          "name": "svc4Icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "share-2",
+                          "iconFontFamily": "lucide",
+                          "fill": "#4EB648"
+                        },
+                        {
+                          "type": "text",
+                          "id": "EbrD7",
+                          "name": "svc4Title",
+                          "fill": "#FFFFFF",
+                          "content": "Diseño de Redes",
+                          "fontFamily": "Outfit",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "iAtgT",
+                          "name": "svc4Desc",
+                          "fill": "#ffffff8c",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Planificación e implementación de infraestructura para empresas, colegios, hospitales y proyectos públicos.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "sKxqi",
+                          "name": "svc4Tag",
+                          "fill": "#4eb64826",
+                          "cornerRadius": 20,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "pEi7V",
+                              "name": "svc4TagText",
+                              "fill": "#4EB648",
+                              "content": "Consultoría",
+                              "fontFamily": "Outfit",
+                              "fontSize": 11,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "I1GAM",
+                      "name": "Instalaciones Eléctricas",
+                      "width": 592,
+                      "height": "fill_container",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 20,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "pmEez",
+                          "name": "svc6Icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "zap",
+                          "iconFontFamily": "lucide",
+                          "fill": "#4EB648"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ste43",
+                          "name": "svc6Title",
+                          "fill": "#0A1628",
+                          "content": "Instalaciones Eléctricas",
+                          "fontFamily": "Outfit",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "8iX6b",
+                          "name": "svc6Desc",
+                          "fill": "#6B7280",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Instalación y mantenimiento de infraestructura eléctrica para torres, centros de datos y equipos de telecomunicaciones.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "gZwjr",
+                          "name": "svc6Tag",
+                          "fill": "#4eb6481a",
+                          "cornerRadius": 20,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "PrgKy",
+                              "name": "svc6TagText",
+                              "fill": "#4EB648",
+                              "content": "Técnico",
+                              "fontFamily": "Outfit",
+                              "fontSize": 11,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MnIlU",
+                      "name": "Enlaces Inalámbricos",
+                      "width": 288,
+                      "height": "fill_container",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 20,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "r6YpC",
+                          "name": "svc3Icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "wifi",
+                          "iconFontFamily": "lucide",
+                          "fill": "#0076BB"
+                        },
+                        {
+                          "type": "text",
+                          "id": "m39ZR",
+                          "name": "svc3Title",
+                          "fill": "#0A1628",
+                          "content": "Enlaces Inalámbricos",
+                          "fontFamily": "Outfit",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Lh10o",
+                          "name": "svc3Desc",
+                          "fill": "#6B7280",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Punto a punto y multipunto para sedes remotas. Alta disponibilidad garantizada.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "S6VaL",
+                          "name": "svc3Tag",
+                          "fill": "#0076bb1a",
+                          "cornerRadius": 20,
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ydpQZ",
+                              "name": "svc3TagText",
+                              "fill": "#0076BB",
+                              "content": "B2B",
+                              "fontFamily": "Outfit",
+                              "fontSize": 11,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "bMAZv",
+          "name": "Nosotros",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "children": [
+            {
+              "type": "frame",
+              "id": "oEGOf",
+              "name": "Nosotros left",
+              "width": 720,
+              "fill": "#FFFFFF",
+              "layout": "vertical",
+              "gap": 32,
+              "padding": [
+                96,
+                120
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Gb9rc",
+                  "name": "nosEye",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "eS2gE",
+                      "name": "nosEyeLine",
+                      "fill": "#4EB648",
+                      "width": 20,
+                      "height": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "oNpAb",
+                      "name": "nosEyeText",
+                      "fill": "#4EB648",
+                      "content": "QUIENES SOMOS",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 2.5
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "eOkFR",
+                  "name": "nosTitle",
+                  "fill": "#0A1628",
+                  "textGrowth": "fixed-width",
+                  "width": 480,
+                  "content": "Conectividad olanchana,\ncon orgullo regional",
+                  "lineHeight": 1.1,
+                  "fontFamily": "Outfit",
+                  "fontSize": 44,
+                  "fontWeight": "800",
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "text",
+                  "id": "1m7fA",
+                  "name": "nosBody1",
+                  "fill": "#6B7280",
+                  "textGrowth": "fixed-width",
+                  "width": 480,
+                  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "Outfit",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "bgWOx",
+                  "name": "nosBody2",
+                  "fill": "#6B7280",
+                  "textGrowth": "fixed-width",
+                  "width": 480,
+                  "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "Outfit",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "8Tny4",
+                  "name": "nosBtn",
+                  "fill": "#0076BB",
+                  "cornerRadius": 8,
+                  "padding": [
+                    12,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "yfWkN",
+                      "name": "nosBtnText",
+                      "fill": "#FFFFFF",
+                      "content": "Contactanos",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "TADdZ",
+              "name": "Nosotros right",
+              "width": 720,
+              "fill": "#0A1628",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": [
+                96,
+                80
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "8R1qA",
+                  "name": "nosStatBig",
+                  "fill": "#ffffff0a",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#ffffff12"
+                  },
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": 40,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "9g0HD",
+                      "name": "nosStatNum",
+                      "fill": "#FFFFFF",
+                      "content": "18+",
+                      "fontFamily": "Outfit",
+                      "fontSize": 72,
+                      "fontWeight": "800",
+                      "letterSpacing": -2
+                    },
+                    {
+                      "type": "text",
+                      "id": "au79D",
+                      "name": "nosStatLabel",
+                      "fill": "#ffffff80",
+                      "textGrowth": "fixed-width",
+                      "width": 480,
+                      "content": "Municipios con cobertura activa en Olancho",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "uXEXA",
+                  "name": "nosQuote",
+                  "fill": "#0076bb26",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb4d"
+                  },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": [
+                    32,
+                    40
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "X0Dbf",
+                      "name": "nosQuoteText",
+                      "fill": "#ffffffb3",
+                      "textGrowth": "fixed-width",
+                      "width": 480,
+                      "content": "Nuestro compromiso es que cada familia y empresa en Olancho tenga acceso a una conexion confiable y de calidad.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "OANNl",
+                      "name": "nosQuoteAuthor",
+                      "fill": "#ffffff66",
+                      "content": "- OlanchoNet",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "UziqQ",
+          "name": "marquee",
+          "clip": true,
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#060F1E",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "SJyME",
+              "name": "track",
+              "height": "fill_container",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0AcPI",
+                  "fill": "#ffffff30",
+                  "content": "Internet Residencial  ✦  Fibra Empresarial  ✦  Instalaciones Eléctricas  ✦  Diseño de Redes  ✦  IPTV  ✦  Enlaces Inalámbricos  ✦  ",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "text",
+                  "id": "IpKY6",
+                  "fill": "#ffffff30",
+                  "content": "Internet Residencial  ✦  Fibra Empresarial  ✦  Instalaciones Eléctricas  ✦  Diseño de Redes  ✦  IPTV  ·  Instalaciones Eléctricas  ✦  Diseño de Redes  ✦  IPTV  ✦  ",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "332Fl",
+          "name": "Cobertura",
+          "width": "fill_container",
+          "height": 560,
+          "fill": "#060F1E",
+          "children": [
+            {
+              "type": "frame",
+              "id": "nKwzg",
+              "name": "Map column",
+              "clip": true,
+              "width": 880,
+              "height": 560,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./public/images/olancho-map-preview.png",
+                "mode": "fill"
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "f0CWw",
+                  "x": 0,
+                  "y": 0,
+                  "name": "mapBg",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "C:/Users/mherr/Documents/Dango/public/images/olancho-map-preview.png",
+                    "mode": "fill"
+                  },
+                  "width": 880,
+                  "height": 560
+                },
+                {
+                  "type": "ellipse",
+                  "id": "mh0du",
+                  "x": 200,
+                  "y": 150,
+                  "name": "mapGlow1",
+                  "opacity": 0.06,
+                  "fill": "#0076BB",
+                  "width": 400,
+                  "height": 300,
+                  "effect": {
+                    "type": "blur",
+                    "radius": 60
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "D9F19",
+                  "x": 350,
+                  "y": 200,
+                  "name": "mapGlow2",
+                  "opacity": 0.04,
+                  "fill": "#4EB648",
+                  "width": 300,
+                  "height": 250,
+                  "effect": {
+                    "type": "blur",
+                    "radius": 50
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "b9PkR",
+                  "x": 318,
+                  "y": 238,
+                  "name": "pulse-juticalpa",
+                  "fill": "#0076bb33",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb66"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "HY54m",
+                  "x": 428,
+                  "y": 172,
+                  "name": "pulse-catacamas",
+                  "fill": "#0076bb33",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb66"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "dx9mh",
+                  "x": 178,
+                  "y": 272,
+                  "name": "pulse-campamento",
+                  "fill": "#4eb64833",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4eb64866"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "zHxp1",
+                  "x": 385,
+                  "y": 132,
+                  "name": "pulse-gualaco",
+                  "fill": "#0076bb33",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb66"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "XKv7m",
+                  "x": 231,
+                  "y": 192,
+                  "name": "pulse-manto",
+                  "fill": "#4eb64833",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4eb64866"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "hD5BL",
+                  "x": 231,
+                  "y": 235,
+                  "name": "pulse-salama",
+                  "fill": "#0076bb33",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb66"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "cHgFU",
+                  "x": 425,
+                  "y": 123,
+                  "name": "pulse-sanesteban",
+                  "fill": "#4eb64833",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4eb64866"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "rb185",
+                  "x": 351,
+                  "y": 146,
+                  "name": "pulse-sfpaz",
+                  "fill": "#0076bb33",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb66"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "SjfAT",
+                  "x": 305,
+                  "y": 132,
+                  "name": "pulse-guarizama",
+                  "fill": "#4eb64833",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4eb64866"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "W4cNw",
+                  "x": 241,
+                  "y": 129,
+                  "name": "pulse-yocon",
+                  "fill": "#0076bb33",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb66"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "FJyH4",
+                  "x": 368,
+                  "y": 192,
+                  "name": "pulse-guata",
+                  "fill": "#4eb64833",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4eb64866"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "RVJUf",
+                  "x": 321,
+                  "y": 287,
+                  "name": "pulse-guayape",
+                  "fill": "#0076bb33",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb66"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "SYV8m",
+                  "x": 325,
+                  "y": 245,
+                  "name": "Juticalpa",
+                  "fill": "#0076BB",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "5dWMY",
+                  "x": 435,
+                  "y": 179,
+                  "name": "Catacamas",
+                  "fill": "#0076BB",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "yJsOM",
+                  "x": 185,
+                  "y": 279,
+                  "name": "Campamento",
+                  "fill": "#4EB648",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "lzWge",
+                  "x": 392,
+                  "y": 139,
+                  "name": "Gualaco",
+                  "fill": "#0076BB",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "PA8Ql",
+                  "x": 238,
+                  "y": 199,
+                  "name": "Manto",
+                  "fill": "#4EB648",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "BoMA1",
+                  "x": 238,
+                  "y": 242,
+                  "name": "Salama",
+                  "fill": "#0076BB",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "Dk62O",
+                  "x": 432,
+                  "y": 130,
+                  "name": "San Esteban",
+                  "fill": "#4EB648",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "KoAic",
+                  "x": 358,
+                  "y": 153,
+                  "name": "San Francisco de la Paz",
+                  "fill": "#0076BB",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "fHzmb",
+                  "x": 312,
+                  "y": 139,
+                  "name": "Guarizama",
+                  "fill": "#4EB648",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "e7133",
+                  "x": 248,
+                  "y": 136,
+                  "name": "Yocon",
+                  "fill": "#0076BB",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "wnQYU",
+                  "x": 375,
+                  "y": 199,
+                  "name": "Guata",
+                  "fill": "#4EB648",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "ZGwmK",
+                  "x": 328,
+                  "y": 294,
+                  "name": "Guayape",
+                  "fill": "#0076BB",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "M6YJP",
+                  "x": 365,
+                  "y": 307,
+                  "name": "pulse-silca",
+                  "fill": "#4eb64833",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4eb64866"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "gOxeD",
+                  "x": 288,
+                  "y": 215,
+                  "name": "pulse-elrosario",
+                  "fill": "#0076bb33",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb66"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "zYQFl",
+                  "x": 401,
+                  "y": 336,
+                  "name": "pulse-mangulile",
+                  "fill": "#4eb64833",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4eb64866"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "n7Dha",
+                  "x": 514,
+                  "y": 221,
+                  "name": "pulse-jano",
+                  "fill": "#0076bb33",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb66"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "PLkzz",
+                  "x": 378,
+                  "y": 367,
+                  "name": "pulse-launion",
+                  "fill": "#4eb64833",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4eb64866"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "oAps8",
+                  "x": 251,
+                  "y": 203,
+                  "name": "pulse-concordia",
+                  "fill": "#0076bb33",
+                  "width": 24,
+                  "height": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb66"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "wvfiF",
+                  "x": 372,
+                  "y": 314,
+                  "name": "Silca",
+                  "fill": "#4EB648",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "1sVgP",
+                  "x": 295,
+                  "y": 222,
+                  "name": "El Rosario",
+                  "fill": "#0076BB",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "QWtRq",
+                  "x": 408,
+                  "y": 343,
+                  "name": "Mangulile",
+                  "fill": "#4EB648",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "48ZgM",
+                  "x": 521,
+                  "y": 228,
+                  "name": "Jano",
+                  "fill": "#0076BB",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "POsnk",
+                  "x": 385,
+                  "y": 374,
+                  "name": "La Union",
+                  "fill": "#4EB648",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "BlxtV",
+                  "x": 258,
+                  "y": 210,
+                  "name": "Concordia",
+                  "fill": "#0076BB",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "ellipse",
+                  "id": "d4Yk8",
+                  "x": 763,
+                  "y": 289,
+                  "name": "Patuca (inactivo)",
+                  "fill": "#00000000",
+                  "width": 10,
+                  "height": 10,
+                  "stroke": {
+                    "thickness": 1.5,
+                    "fill": "#ffffff33"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "aNDAY",
+                  "x": 520,
+                  "y": 82,
+                  "name": "Dulce Nombre de Culmi (inactivo)",
+                  "fill": "#00000000",
+                  "width": 10,
+                  "height": 10,
+                  "stroke": {
+                    "thickness": 1.5,
+                    "fill": "#ffffff33"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "jrgjV",
+                  "x": 137,
+                  "y": 180,
+                  "name": "San Francisco de Becerra (inactivo)",
+                  "fill": "#00000000",
+                  "width": 10,
+                  "height": 10,
+                  "stroke": {
+                    "thickness": 1.5,
+                    "fill": "#ffffff33"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "MQ6EN",
+                  "x": 253,
+                  "y": 274,
+                  "name": "Santa Maria del Real (inactivo)",
+                  "fill": "#00000000",
+                  "width": 10,
+                  "height": 10,
+                  "stroke": {
+                    "thickness": 1.5,
+                    "fill": "#ffffff33"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "nbcEF",
+                  "x": 187,
+                  "y": 102,
+                  "name": "Esquipulas del Norte (inactivo)",
+                  "fill": "#00000000",
+                  "width": 10,
+                  "height": 10,
+                  "stroke": {
+                    "thickness": 1.5,
+                    "fill": "#ffffff33"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "cDw7c",
+                  "x": 297,
+                  "y": 329,
+                  "name": "Lepaguare (inactivo)",
+                  "fill": "#00000000",
+                  "width": 10,
+                  "height": 10,
+                  "stroke": {
+                    "thickness": 1.5,
+                    "fill": "#ffffff33"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "9CdUY",
+                  "x": 280,
+                  "y": 190,
+                  "name": "Tooltip Juticalpa",
+                  "width": 130,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000066",
+                    "offset": {
+                      "x": 0,
+                      "y": 8
+                    },
+                    "blur": 24
+                  },
+                  "layout": "vertical",
+                  "gap": 2,
+                  "padding": [
+                    8,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "mk9sC",
+                      "name": "tipDot",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "RIR2e",
+                          "name": "tipIndicator",
+                          "fill": "#0076BB",
+                          "width": 6,
+                          "height": 6
+                        },
+                        {
+                          "type": "text",
+                          "id": "uvlJw",
+                          "name": "tipName",
+                          "fill": "#0A1628",
+                          "content": "Juticalpa",
+                          "fontFamily": "Outfit",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "eFC7l",
+                      "name": "tipStatus",
+                      "fill": "#4EB648",
+                      "content": "Cobertura activa",
+                      "fontFamily": "Outfit",
+                      "fontSize": 10,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "OGBek",
+              "name": "Content column",
+              "width": 560,
+              "height": 560,
+              "fill": "#060F1E",
+              "layout": "vertical",
+              "gap": 32,
+              "padding": [
+                72,
+                64
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "WyebI",
+                  "name": "cobEye",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "MMI1C",
+                      "name": "cobEyeLine",
+                      "fill": "#4EB648",
+                      "width": 20,
+                      "height": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "bnPel",
+                      "name": "cobEyeText",
+                      "fill": "#4EB648",
+                      "content": "COBERTURA REGIONAL",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 2.5
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "g8Kpw",
+                  "name": "cobTitle",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": 400,
+                  "content": "13 de 23\nmunicipios\nde Olancho",
+                  "lineHeight": 1.05,
+                  "fontFamily": "Outfit",
+                  "fontSize": 48,
+                  "fontWeight": "800",
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "frame",
+                  "id": "10uay",
+                  "name": "progressCard",
+                  "width": "fill_container",
+                  "fill": "#ffffff0d",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#ffffff12"
+                  },
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "TGBmG",
+                      "name": "progressHeader",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "pKDFz",
+                          "name": "progressLabel",
+                          "fill": "#ffffff80",
+                          "content": "Cobertura del departamento",
+                          "fontFamily": "Outfit",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "f5bpU",
+                          "name": "progressPct",
+                          "fill": "#4EB648",
+                          "content": "57%",
+                          "fontFamily": "Outfit",
+                          "fontSize": 16,
+                          "fontWeight": "800"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rPEqp",
+                      "name": "progress bar",
+                      "width": "fill_container",
+                      "height": 6,
+                      "cornerRadius": 3,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 3,
+                          "id": "mLYFo",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "progressBg",
+                          "fill": "#ffffff14",
+                          "width": 432,
+                          "height": 6
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 3,
+                          "id": "Ey3Y5",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "progressFill",
+                          "fill": {
+                            "type": "gradient",
+                            "gradientType": "linear",
+                            "enabled": true,
+                            "rotation": 90,
+                            "size": {
+                              "height": 1
+                            },
+                            "colors": [
+                              {
+                                "color": "#0076BB",
+                                "position": 0
+                              },
+                              {
+                                "color": "#4EB648",
+                                "position": 1
+                              }
+                            ]
+                          },
+                          "width": 246,
+                          "height": 6
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "b1Ae7",
+                  "name": "checkerCard",
+                  "width": "fill_container",
+                  "fill": "#0076bb14",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#0076bb33"
+                  },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rMOiP",
+                      "name": "checkerTitle",
+                      "fill": "#FFFFFF",
+                      "content": "Verificar cobertura",
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "1hnsD",
+                      "name": "checkerSub",
+                      "fill": "#ffffff73",
+                      "content": "Ingresa tu municipio para confirmar disponibilidad",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n0F9L",
+                      "name": "checkerInput",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "#ffffff14",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#ffffff1f"
+                      },
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "VUfIv",
+                          "name": "checkerPlaceholder",
+                          "fill": "#ffffff4d",
+                          "content": "Selecciona tu municipio...",
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "lrgwC",
+                          "name": "checkerArrow",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "chevron-down",
+                          "iconFontFamily": "lucide",
+                          "fill": "#ffffff66"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Jflw0",
+                      "name": "checkerBtn",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "#0076BB",
+                      "cornerRadius": 8,
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "97LOm",
+                          "name": "checkerBtnText",
+                          "fill": "#FFFFFF",
+                          "content": "Verificar disponibilidad",
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "sxMI4",
+                  "name": "legend",
+                  "gap": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "e3V6o",
+                      "name": "leg1",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "rZqkf",
+                          "name": "leg1Dot",
+                          "fill": "#0076BB",
+                          "width": 8,
+                          "height": 8
+                        },
+                        {
+                          "type": "text",
+                          "id": "vamJX",
+                          "name": "leg1Text",
+                          "fill": "#ffffff73",
+                          "content": "Cobertura activa",
+                          "fontFamily": "Outfit",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "U6G5W",
+                      "name": "leg2",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "Qm9Co",
+                          "name": "leg2Dot",
+                          "fill": "#00000000",
+                          "width": 8,
+                          "height": 8,
+                          "stroke": {
+                            "thickness": 1.5,
+                            "fill": "#ffffff4d"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "6dfGW",
+                          "name": "leg2Text",
+                          "fill": "#ffffff73",
+                          "content": "Proximamente",
+                          "fontFamily": "Outfit",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "JhoDz",
+          "name": "Contacto",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "children": [
+            {
+              "type": "frame",
+              "id": "xArER",
+              "name": "Contact info",
+              "width": 560,
+              "fill": "#F8F9FB",
+              "layout": "vertical",
+              "gap": 40,
+              "padding": 96,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BpeCC",
+                  "name": "conEye",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "HPbI4",
+                      "name": "conEyeLine",
+                      "fill": "#0076BB",
+                      "width": 20,
+                      "height": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "fNovz",
+                      "name": "conEyeText",
+                      "fill": "#0076BB",
+                      "content": "HABLEMOS",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 2.5
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "IQ1FA",
+                  "name": "conTitle",
+                  "fill": "#0A1628",
+                  "textGrowth": "fixed-width",
+                  "width": 368,
+                  "content": "Listos para\nconectarte",
+                  "lineHeight": 1.1,
+                  "fontFamily": "Outfit",
+                  "fontSize": 44,
+                  "fontWeight": "800",
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "frame",
+                  "id": "AXlyR",
+                  "name": "conItems",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "9EukE",
+                      "name": "conP1",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "qCT39",
+                          "name": "conP1Icon",
+                          "width": 44,
+                          "height": 44,
+                          "fill": "#0076bb1a",
+                          "cornerRadius": 22,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "2XOpc",
+                              "name": "conP1Ico",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "phone",
+                              "iconFontFamily": "lucide",
+                              "fill": "#0076BB"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "h582g",
+                          "name": "conP1Info",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "1aaL3",
+                              "name": "conP1Label",
+                              "fill": "#9CA3AF",
+                              "content": "Telefono principal",
+                              "fontFamily": "Outfit",
+                              "fontSize": 11,
+                              "fontWeight": "600",
+                              "letterSpacing": 1
+                            },
+                            {
+                              "type": "text",
+                              "id": "I3wXw",
+                              "name": "conP1Val",
+                              "fill": "#0A1628",
+                              "content": "+504 2785-4010",
+                              "fontFamily": "Outfit",
+                              "fontSize": 16,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NoFKf",
+                      "name": "conP2",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "NmZZw",
+                          "name": "conP2Icon",
+                          "width": 44,
+                          "height": 44,
+                          "fill": "#0076bb1a",
+                          "cornerRadius": 22,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "I4hv3",
+                              "name": "conP2Ico",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "phone",
+                              "iconFontFamily": "lucide",
+                              "fill": "#0076BB"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "LIqf2",
+                          "name": "conP2Info",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "58Qzg",
+                              "name": "conP2Label",
+                              "fill": "#9CA3AF",
+                              "content": "Telefono alternativo",
+                              "fontFamily": "Outfit",
+                              "fontSize": 11,
+                              "fontWeight": "600",
+                              "letterSpacing": 1
+                            },
+                            {
+                              "type": "text",
+                              "id": "Hr976",
+                              "name": "conP2Val",
+                              "fill": "#0A1628",
+                              "content": "+504 9501-5187",
+                              "fontFamily": "Outfit",
+                              "fontSize": 16,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FXfCt",
+                      "name": "conE1",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "W4ama",
+                          "name": "conE1Icon",
+                          "width": 44,
+                          "height": 44,
+                          "fill": "#4eb6481a",
+                          "cornerRadius": 22,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "mOXo1",
+                              "name": "conE1Ico",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "mail",
+                              "iconFontFamily": "lucide",
+                              "fill": "#4EB648"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "PLvdj",
+                          "name": "conE1Info",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "GMylJ",
+                              "name": "conE1Label",
+                              "fill": "#9CA3AF",
+                              "content": "Soporte tecnico",
+                              "fontFamily": "Outfit",
+                              "fontSize": 11,
+                              "fontWeight": "600",
+                              "letterSpacing": 1
+                            },
+                            {
+                              "type": "text",
+                              "id": "9zwwx",
+                              "name": "conE1Val",
+                              "fill": "#0A1628",
+                              "content": "soporte@olanchonet.com",
+                              "fontFamily": "Outfit",
+                              "fontSize": 16,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "l2K8F",
+                      "name": "conE2",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "jDTAn",
+                          "name": "conE2Icon",
+                          "width": 44,
+                          "height": 44,
+                          "fill": "#4eb6481a",
+                          "cornerRadius": 22,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "Zhyow",
+                              "name": "conE2Ico",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "mail",
+                              "iconFontFamily": "lucide",
+                              "fill": "#4EB648"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "sf9ED",
+                          "name": "conE2Info",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ihJvr",
+                              "name": "conE2Label",
+                              "fill": "#9CA3AF",
+                              "content": "Ventas y planes",
+                              "fontFamily": "Outfit",
+                              "fontSize": 11,
+                              "fontWeight": "600",
+                              "letterSpacing": 1
+                            },
+                            {
+                              "type": "text",
+                              "id": "2HkGQ",
+                              "name": "conE2Val",
+                              "fill": "#0A1628",
+                              "content": "ventas@olanchonet.com",
+                              "fontFamily": "Outfit",
+                              "fontSize": 16,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "gIlbt",
+              "name": "Contact form",
+              "width": 880,
+              "fill": "#FFFFFF",
+              "layout": "vertical",
+              "gap": 32,
+              "padding": [
+                96,
+                80
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wqAgs",
+                  "name": "formTitle",
+                  "fill": "#0A1628",
+                  "content": "Envianos un mensaje",
+                  "fontFamily": "Outfit",
+                  "fontSize": 28,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "aJqJk",
+                  "name": "formRow1",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "dSf5P",
+                      "name": "field1",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "oQ1Ke",
+                          "name": "field1Label",
+                          "fill": "#9CA3AF",
+                          "content": "NOMBRE COMPLETO",
+                          "fontFamily": "Outfit",
+                          "fontSize": 10,
+                          "fontWeight": "700",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "frame",
+                          "id": "jS8gQ",
+                          "name": "field1Input",
+                          "width": "fill_container",
+                          "height": 48,
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E5E7EB"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "L0RGg",
+                      "name": "field2",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "kzRih",
+                          "name": "field2Label",
+                          "fill": "#9CA3AF",
+                          "content": "CORREO ELECTRONICO",
+                          "fontFamily": "Outfit",
+                          "fontSize": 10,
+                          "fontWeight": "700",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hZzHT",
+                          "name": "field2Input",
+                          "width": "fill_container",
+                          "height": 48,
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E5E7EB"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "W1mtt",
+                  "name": "field3",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ymiby",
+                      "name": "field3Label",
+                      "fill": "#9CA3AF",
+                      "content": "TELEFONO",
+                      "fontFamily": "Outfit",
+                      "fontSize": 10,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sLfRH",
+                      "name": "field3Input",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E7EB"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "7bYJ9",
+                  "name": "field4",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "jBXfE",
+                      "name": "field4Label",
+                      "fill": "#9CA3AF",
+                      "content": "SERVICIO DE INTERES",
+                      "fontFamily": "Outfit",
+                      "fontSize": 10,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "frame",
+                      "id": "LXufu",
+                      "name": "field4Input",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E7EB"
+                      },
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "aCZlB",
+                          "name": "field4Placeholder",
+                          "fill": "#D1D5DB",
+                          "content": "Seleccionar servicio...",
+                          "fontFamily": "Outfit",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "COBrs",
+                          "name": "field4Arrow",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "chevron-down",
+                          "iconFontFamily": "lucide",
+                          "fill": "#9CA3AF"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "I5TRb",
+                  "name": "field5",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "GAmmn",
+                      "name": "field5Label",
+                      "fill": "#9CA3AF",
+                      "content": "MENSAJE",
+                      "fontFamily": "Outfit",
+                      "fontSize": 10,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "frame",
+                      "id": "WIqfO",
+                      "name": "field5Input",
+                      "width": "fill_container",
+                      "height": 120,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E7EB"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "2CbG5",
+                  "name": "submitBtn",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "#0076BB",
+                  "cornerRadius": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "urSIn",
+                      "name": "submitText",
+                      "fill": "#FFFFFF",
+                      "content": "Enviar mensaje",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "1QBpC",
+          "name": "Footer",
+          "width": "fill_container",
+          "fill": "#060D1A",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "k4wXt",
+              "name": "footerMain",
+              "width": "fill_container",
+              "padding": [
+                72,
+                120
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "H0QbR",
+                  "name": "footerBrand",
+                  "width": 320,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "G68r7",
+                      "name": "footerLogoRow",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "GZFqb",
+                          "name": "fMark",
+                          "gap": 4,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "5scKy",
+                              "name": "fmBar1",
+                              "fill": "#4EB648",
+                              "width": 6,
+                              "height": 18
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "CT3E9",
+                              "name": "fmBar2",
+                              "opacity": 0.6,
+                              "fill": "#4EB648",
+                              "width": 6,
+                              "height": 14
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "nVDYd",
+                              "name": "fmBar3",
+                              "fill": "#0076BB",
+                              "width": 6,
+                              "height": 22
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "8eQMi",
+                              "name": "fmBar4",
+                              "opacity": 0.6,
+                              "fill": "#0076BB",
+                              "width": 6,
+                              "height": 15
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Bc9bL",
+                          "name": "fLogoText",
+                          "layout": "vertical",
+                          "gap": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ML3Vi",
+                              "name": "fLogoName",
+                              "fill": "#FFFFFF",
+                              "content": "OLANCHONET",
+                              "fontFamily": "Outfit",
+                              "fontSize": 14,
+                              "fontWeight": "800",
+                              "letterSpacing": 3
+                            },
+                            {
+                              "type": "text",
+                              "id": "ZFknG",
+                              "name": "fLogoSub",
+                              "fill": "#ffffff59",
+                              "content": "NETWORKS",
+                              "fontFamily": "Outfit",
+                              "fontSize": 7,
+                              "fontWeight": "300",
+                              "letterSpacing": 5
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "Q9cZ6",
+                      "name": "footerTagline",
+                      "fill": "#ffffff59",
+                      "textGrowth": "fixed-width",
+                      "width": 280,
+                      "content": "Conectividad de alta velocidad para hogares y empresas en el departamento de Olancho, Honduras.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fDQER",
+                  "name": "footerNav",
+                  "width": 160,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fh79i",
+                      "name": "footerNavTitle",
+                      "fill": "#ffffff40",
+                      "content": "NAVEGACION",
+                      "fontFamily": "Outfit",
+                      "fontSize": 10,
+                      "fontWeight": "700",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "449sC",
+                      "name": "fn1",
+                      "fill": "#ffffff80",
+                      "content": "Servicios",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "FbHvF",
+                      "name": "fn2",
+                      "fill": "#ffffff80",
+                      "content": "Nosotros",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5wVhW",
+                      "name": "fn3",
+                      "fill": "#ffffff80",
+                      "content": "Cobertura",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Bcvg4",
+                      "name": "fn4",
+                      "fill": "#ffffff80",
+                      "content": "Contacto",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "w6udt",
+                      "name": "fn5",
+                      "fill": "#ffffff80",
+                      "content": "Carreras",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "S9iF9",
+                  "name": "footerContact",
+                  "width": 260,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "cRfsQ",
+                      "name": "footerContactTitle",
+                      "fill": "#ffffff40",
+                      "content": "CONTACTO",
+                      "fontFamily": "Outfit",
+                      "fontSize": 10,
+                      "fontWeight": "700",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "d8Zsg",
+                      "name": "fc1",
+                      "fill": "#ffffff80",
+                      "content": "+504 2785-4010",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "VAEgF",
+                      "name": "fc2",
+                      "fill": "#ffffff80",
+                      "content": "+504 9501-5187",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ixVcp",
+                      "name": "fc3",
+                      "fill": "#ffffff80",
+                      "content": "soporte@olanchonet.com",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NeuAo",
+                      "name": "fc4",
+                      "fill": "#ffffff80",
+                      "content": "ventas@olanchonet.com",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "l1Wxs",
+              "name": "footerBar",
+              "width": "fill_container",
+              "fill": "#ffffff08",
+              "padding": [
+                20,
+                120
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "yxv6o",
+                  "name": "footerCopy",
+                  "fill": "#ffffff33",
+                  "content": "© 2025 Olancho Networks. Todos los derechos reservados.",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "PhXrQ",
+                  "name": "footerLoc",
+                  "fill": "#ffffff26",
+                  "content": "Olancho, Honduras",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

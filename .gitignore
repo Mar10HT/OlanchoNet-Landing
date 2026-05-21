@@ -2,9 +2,6 @@
 node_modules/
 scripts/node_modules/
 
-# Design files
-*.pen
-
 # Build output
 dist/
 .astro/
