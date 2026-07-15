@@ -1,0 +1,110 @@
+---
+// Instagram promo grid — static images linking to the @olanchonet profile.
+// Self-contained reveal (own ScrollTrigger) so the grid never depends on the
+// global .reveal batch, which can miss items under fast scroll / HMR.
+const profileUrl = 'https://instagram.com/olanchonet';
+const images = [
+  '/images/ig-1.png',
+  '/images/ig-2.png',
+  '/images/ig-3.png',
+  '/images/ig-4.png',
+];
+---
+
+<section id="galeria" class="bg-brand-dark py-20 lg:py-24 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="g-reveal flex items-end justify-between gap-4 mb-10">
+      <div>
+        <p class="text-brand-blue text-sm font-semibold tracking-widest uppercase mb-2">Síguenos</p>
+        <h2 class="font-display font-black text-3xl lg:text-4xl text-white tracking-tight leading-tight">
+          @olanchonet en <span style="color: #E1306C;">Instagram</span>
+        </h2>
+      </div>
+      <a
+        href={profileUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex-shrink-0 px-5 py-2.5 border border-white/30 text-white text-sm font-medium tracking-wide rounded hover:bg-white hover:text-brand-dark transition-all duration-200"
+      >
+        Ver perfil
+      </a>
+    </div>
+
+    <!-- Image grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {images.map((src) => (
+        <a
+          href={profileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="g-reveal group relative aspect-square rounded-xl overflow-hidden block"
+          aria-label="Ver OlanchoNet en Instagram"
+        >
+          <img
+            src={src}
+            alt="OlanchoNet en Instagram"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style="background: rgba(13,20,33,0.55);"
+          >
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Caption -->
+    <p class="g-reveal text-center text-white/40 text-sm mt-8">
+      Síguenos en <span class="text-white/70">@olanchonet</span> para más contenido.
+    </p>
+
+  </div>
+</section>
+
+<style>
+  /* Initial hidden state — GSAP animates from here on scroll into view */
+  .g-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .g-reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const section = document.getElementById('galeria');
+  if (section) {
+    const items = section.querySelectorAll('.g-reveal');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduced) {
+      gsap.set(items, { opacity: 1, y: 0 });
+    } else {
+      gsap.to(items, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: section, start: 'top 80%', once: true },
+      });
+    }
+  }
+</script>
