@@ -1,0 +1,240 @@
+---
+// Network infrastructure showcase — speed tests, network stats, CDN peering,
+// live IPv6 propagation (APNIC), and core capabilities.
+const speedTests = [
+  { name: 'Speedtest', logo: '/images/speedtest.png', desc: 'Nuestro medidor oficial',    href: 'https://olanchonet.speedtestcustom.com/' },
+  { name: 'Fast.com',  logo: '/images/fast.png',      desc: 'Prueba rápida de Netflix',   href: 'https://fast.com/' },
+  { name: 'nPerf',     logo: '/images/nperf.png',     desc: 'Test completo y detallado',  href: 'https://www.nperf.com/en/' },
+];
+
+const netStats = [
+  { display: '85%',  target: 85, suffix: '%',  animate: true,  label: 'Del tráfico responde en', context: 'menos de 8 ms',   color: 'var(--color-brand-blue)'  },
+  { display: '10',   target: 10, suffix: '',   animate: true,  label: 'CDNs globales con',        context: 'conexión directa', color: 'var(--color-brand-green)' },
+  { display: '8ms',  target: 8,  suffix: 'ms', animate: true,  label: 'Latencia promedio',        context: 'a contenido CDN',  color: 'var(--color-brand-blue)'  },
+  { display: '24/7', target: 0,  suffix: '',   animate: false, label: 'Monitoreo activo',         context: 'de red y nodos',   color: 'var(--color-brand-green)' },
+];
+
+// Icons: brand favicons stay colored; monochrome simple-icons are inverted to white.
+const cdns = [
+  { name: 'Google',    icon: 'https://www.google.com/favicon.ico',     invert: false },
+  { name: 'Akamai',    icon: 'https://www.akamai.com/favicon.ico',     invert: false },
+  { name: 'Cloudflare', icon: 'https://www.cloudflare.com/favicon.ico', invert: false },
+  { name: 'CDN77',     icon: 'https://www.cdn77.com/favicon.ico',      invert: false },
+  { name: 'Netflix',   icon: 'https://www.netflix.com/favicon.ico',    invert: false },
+  { name: 'Steam',     icon: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/steam.svg', invert: true },
+  { name: 'Microsoft', icon: 'https://www.microsoft.com/favicon.ico',  invert: false },
+  { name: 'Meta',      icon: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/meta.svg',  invert: true },
+  { name: 'Alibaba',   icon: 'https://www.alibabacloud.com/favicon.ico', invert: false },
+  { name: 'Tencent',   icon: 'https://www.tencent.com/favicon.ico',    invert: false },
+];
+
+const features = [
+  { emoji: '🎮', title: 'El mejor CDN de gaming: Steam',       desc: 'Somos uno de los pocos proveedores en Honduras con interconexión directa con la red de contenido de Valve/Steam. Descarga juegos, actualizaciones y DLCs a velocidad completa sin pasar por nodos internacionales.' },
+  { emoji: '⚡', title: 'Redundancia 40 GB en todos los nodos', desc: 'Cada nodo de nuestra red opera con enlaces redundantes de 40 Gigabits por segundo. Si un enlace falla, el tráfico se redirige automáticamente en milisegundos — sin que lo notes.' },
+  { emoji: '🔌', title: 'Red con alta capacidad',              desc: 'Toda nuestra infraestructura de enrutamiento, switching y distribución utiliza exclusivamente equipos de alta capacidad — el estándar de confiabilidad y rendimiento de redes a nivel mundial.' },
+  { emoji: '🌐', title: 'IPv6 nativo en todos los clientes',    desc: 'Todos nuestros clientes reciben conectividad IPv6 nativa — el protocolo de internet de nueva generación con espacio prácticamente ilimitado de direcciones. Estamos listos para el futuro de Internet.' },
+];
+---
+
+<section id="infraestructura" class="bg-brand-darker py-24 lg:py-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="reveal text-center max-w-3xl mx-auto mb-16">
+      <p class="text-brand-blue text-sm font-semibold tracking-widest uppercase mb-3">Infraestructura</p>
+      <h2 class="font-display font-black text-4xl lg:text-5xl text-white tracking-tight leading-tight mb-5">
+        Conectados a la red más rápida del mundo
+      </h2>
+      <p class="text-white/50 text-lg leading-relaxed">
+        Nuestra red tiene interconexión directa con los CDNs más importantes del planeta, para que
+        el contenido llegue a tu dispositivo a la máxima velocidad posible — sin saltos innecesarios.
+      </p>
+    </div>
+
+    <!-- Speed tests -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16">
+      {speedTests.map((s) => (
+        <a
+          href={s.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="reveal group rounded-2xl p-8 flex flex-col items-center text-center transition-transform duration-200 hover:-translate-y-1"
+          style="background: linear-gradient(135deg, rgba(0,118,187,0.92), rgba(0,118,187,0.55)); border: 1px solid rgba(255,255,255,0.10);"
+        >
+          <div class="w-16 h-16 rounded-xl bg-white flex items-center justify-center mb-4 overflow-hidden">
+            <img src={s.logo} alt={s.name} width="40" height="40" loading="lazy" class="w-10 h-10 object-contain" />
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-1">{s.name}</h3>
+          <p class="text-white/70 text-sm">{s.desc}</p>
+        </a>
+      ))}
+    </div>
+
+    <!-- Network stats -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
+      {netStats.map((s) => (
+        <div class="reveal rounded-xl p-6" style={`background: var(--color-brand-dark); border-top: 3px solid ${s.color};`}>
+          <p
+            class="stat-num font-display font-black text-4xl lg:text-5xl text-white mb-3"
+            data-target={s.target}
+            data-suffix={s.suffix}
+            data-static={s.animate ? undefined : 'true'}
+          >
+            {s.display}
+          </p>
+          <p class="text-[10px] font-bold tracking-[0.12em] uppercase" style="color: rgba(255,255,255,0.5);">{s.label}</p>
+          <p class="text-sm text-white mt-0.5">{s.context}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CDN peering -->
+    <div class="reveal mb-20">
+      <p class="text-center text-white/40 text-xs font-semibold tracking-widest uppercase mb-8">
+        Conectados directamente con los principales CDNs del mundo
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {cdns.map((c) => (
+          <div
+            class="flex items-center gap-2.5 px-4 py-2.5 rounded-lg"
+            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);"
+          >
+            <img
+              src={c.icon}
+              alt={c.name}
+              width="20"
+              height="20"
+              loading="lazy"
+              class="w-5 h-5 object-contain flex-shrink-0"
+              style={c.invert ? 'filter: brightness(0) invert(1);' : ''}
+            />
+            <span class="text-white/70 text-sm font-medium">{c.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Live IPv6 propagation -->
+    <div class="reveal rounded-2xl p-8 lg:p-10 mb-16" style="background: rgba(0,118,187,0.06); border: 1px solid rgba(0,118,187,0.22);">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <!-- Gauge -->
+        <div class="relative flex-shrink-0" style="width: 150px; height: 150px;">
+          <svg viewBox="0 0 120 120" class="w-full h-full" style="transform: rotate(-90deg);">
+            <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8" />
+            <circle
+              id="ipv6-circle"
+              cx="60" cy="60" r="54"
+              fill="none"
+              stroke="var(--color-brand-blue)"
+              stroke-width="8"
+              stroke-linecap="round"
+              stroke-dasharray="0 339.29"
+              style="transition: stroke-dasharray 1.3s cubic-bezier(0.16,1,0.3,1);"
+            />
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <div id="ipv6-percentage" class="font-display font-black text-2xl text-white leading-none">--</div>
+            <div class="text-white/40 text-[10px] tracking-widest uppercase mt-1">IPv6</div>
+          </div>
+        </div>
+        <!-- Copy -->
+        <div class="text-center md:text-left">
+          <h3 class="flex items-center gap-2 justify-center md:justify-start font-display font-bold text-lg text-brand-blue mb-3 uppercase tracking-wide">
+            <span aria-hidden="true">🌐</span> Propagación IPv6 de OlanchoNet — en tiempo real
+          </h3>
+          <p class="text-white/60 text-sm leading-relaxed mb-3">
+            Somos el operador con mayor adopción de IPv6 en Honduras según mediciones independientes de
+            APNIC (Asia-Pacific Network Information Centre), uno de los cinco registros regionales de Internet
+            del mundo. El porcentaje representa los usuarios de OlanchoNet que ya navegan con IPv6 activo.
+          </p>
+          <p class="text-white/35 text-xs">
+            Fuente:
+            <a
+              href="https://stats.labs.apnic.net/ipv6/AS269973?a=269973&c=HN"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline hover:text-white/70 transition-colors"
+            >APNIC IPv6 Stats — AS269973</a>
+            · Haz click para validar.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core capabilities -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {features.map((f) => (
+        <div class="reveal rounded-2xl p-8" style="background: var(--color-brand-dark); border: 1px solid rgba(255,255,255,0.06);">
+          <div class="text-3xl mb-4" aria-hidden="true">{f.emoji}</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2 uppercase tracking-wide">{f.title}</h3>
+          <p class="text-white/55 text-sm leading-relaxed">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const section = document.getElementById('infraestructura');
+
+  // ── Count-up network stats ─────────────────────────────────────────────
+  if (section) {
+    section.querySelectorAll<HTMLElement>('.stat-num').forEach((el, i) => {
+      if (el.dataset.static === 'true') return;
+      const target = parseInt(el.dataset.target ?? '0', 10);
+      const suffix = el.dataset.suffix ?? '';
+      const obj = { value: 0 };
+      gsap.to(obj, {
+        value: target, duration: 1.4, delay: i * 0.08,
+        ease: 'power3.out', snap: { value: 1 },
+        onUpdate() { el.textContent = String(obj.value) + suffix; },
+        scrollTrigger: { trigger: section, start: 'top 70%', once: true },
+      });
+    });
+  }
+
+  // ── Live IPv6 propagation from APNIC ───────────────────────────────────
+  // Falls back to the last known measured value if the request is blocked (CORS).
+  const IPV6_FALLBACK = 45.9;
+  const circleEl = document.getElementById('ipv6-circle');
+  const pctEl = document.getElementById('ipv6-percentage');
+  const RADIUS = 54;
+  const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
+  function renderIPv6(pct: number) {
+    if (!circleEl || !pctEl) return;
+    const filled = CIRCUMFERENCE * (pct / 100);
+    circleEl.setAttribute('stroke-dasharray', `${filled} ${CIRCUMFERENCE - filled}`);
+    pctEl.textContent = pct.toFixed(1) + '%';
+  }
+
+  async function loadIPv6() {
+    try {
+      const res = await fetch(
+        'https://stats.labs.apnic.net/ipv6/AS269973?a=269973&c=HN&x=1&s=0&p=1&w=30&s=1&json=1',
+        { mode: 'cors' }
+      );
+      const html = await res.text();
+      // Summary row: ...AS269973...,{v: 45.93, f:'45.93%'}...
+      const match = html.match(/AS269973[\s\S]*?\{v:\s*([0-9.]+)/);
+      const pct = match ? parseFloat(match[1]) : IPV6_FALLBACK;
+      renderIPv6(Number.isFinite(pct) ? pct : IPV6_FALLBACK);
+    } catch {
+      renderIPv6(IPV6_FALLBACK);
+    }
+  }
+
+  if (circleEl) {
+    ScrollTrigger.create({
+      trigger: circleEl,
+      start: 'top 85%',
+      once: true,
+      onEnter: () => loadIPv6(),
+    });
+  }
+</script>

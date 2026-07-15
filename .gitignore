@@ -6,6 +6,9 @@ scripts/node_modules/
 dist/
 .astro/
 
+# Local screenshot comparison workspace
+.compare/
+
 # Environment
 .env
 .env.*
