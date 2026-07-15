@@ -1,10 +1,10 @@
 ---
 const plans = [
-  { name: 'Básico',  mbps: 50,  price: '650',   popular: false },
-  { name: 'Hogar',   mbps: 80,  price: '810',   popular: true  },
-  { name: 'Plus',    mbps: 120, price: '1,010', popular: false },
-  { name: 'Premium', mbps: 180, price: '1,260', popular: false },
-  { name: 'Ultra',   mbps: 270, price: '1,580', popular: false },
+  { name: 'Básico',  mbps: 50,  popular: false },
+  { name: 'Hogar',   mbps: 80,  popular: true  },
+  { name: 'Plus',    mbps: 120, popular: false },
+  { name: 'Premium', mbps: 180, popular: false },
+  { name: 'Ultra',   mbps: 270, popular: false },
 ];
 
 const baseFeatures = [
@@ -41,7 +41,7 @@ const baseFeatures = [
           class="reveal flip-card cursor-pointer h-[380px]"
           role="button"
           tabindex="0"
-          aria-label={`Plan ${plan.name}, ${plan.mbps} Mbps, L ${plan.price} por mes`}
+          aria-label={`Plan ${plan.name}, ${plan.mbps} Mbps`}
         >
           <div class="flip-card-inner">
 
@@ -75,12 +75,17 @@ const baseFeatures = [
                 <span class="text-[11px] tracking-[0.25em] text-white/35 uppercase">Mbps</span>
               </div>
 
-              <!-- Price + hint -->
-              <div class="flex flex-col gap-1.5">
-                <span class="font-display font-bold text-[22px] text-white">
-                  L {plan.price} <span class="text-sm font-normal text-white/50">/mes</span>
-                </span>
-                <span class="text-[11px] text-white/25">Haz click para ver detalles →</span>
+              <!-- CTA + hint -->
+              <div class="flex flex-col gap-2">
+                <a
+                  href="#contacto"
+                  data-no-flip
+                  class="flex items-center justify-center h-10 rounded-lg text-[13px] font-bold text-white transition-opacity hover:opacity-90"
+                  style="background: var(--color-brand-blue);"
+                >
+                  Contáctanos
+                </a>
+                <span class="text-[11px] text-white/25 text-center">Haz click para ver detalles →</span>
               </div>
             </div>
 
@@ -116,17 +121,15 @@ const baseFeatures = [
                 </ul>
               </div>
 
-              <!-- Price + CTA -->
+              <!-- CTA -->
               <div class="flex flex-col gap-3">
-                <span class="font-display font-black text-[22px] text-white">
-                  L {plan.price} <span class="text-sm font-normal text-white/70">/mes</span>
-                </span>
                 <a
                   href="#contacto"
+                  data-no-flip
                   class="flex items-center justify-center h-10 rounded-lg bg-white text-[13px] font-bold transition-opacity hover:opacity-90"
                   style="color: var(--color-brand-blue);"
                 >
-                  Contratar
+                  Contáctanos
                 </a>
               </div>
             </div>
@@ -145,7 +148,9 @@ const baseFeatures = [
   document.querySelectorAll<HTMLElement>('.flip-card').forEach(card => {
     let flipped = false;
     const inner = card.querySelector<HTMLElement>('.flip-card-inner');
-    const flip = () => {
+    const flip = (e?: Event) => {
+      // Let CTA links navigate without flipping the card
+      if (e && (e.target as HTMLElement).closest('[data-no-flip]')) return;
       flipped = !flipped;
       card.classList.toggle('flipped', flipped);
       if (inner) gsap.to(inner, { rotationY: flipped ? 180 : 0, duration: 0.65, ease: 'power2.inOut' });
