@@ -28,11 +28,11 @@ const cdns = [
   { name: 'Tencent',   icon: 'https://www.tencent.com/favicon.ico',    invert: false },
 ];
 
-const features = [
-  { emoji: '🎮', title: 'El mejor CDN de gaming: Steam',       desc: 'Somos uno de los pocos proveedores en Honduras con interconexión directa con la red de contenido de Valve/Steam. Descarga juegos, actualizaciones y DLCs a velocidad completa sin pasar por nodos internacionales.' },
-  { emoji: '⚡', title: 'Redundancia 40 GB en todos los nodos', desc: 'Cada nodo de nuestra red opera con enlaces redundantes de 40 Gigabits por segundo. Si un enlace falla, el tráfico se redirige automáticamente en milisegundos — sin que lo notes.' },
-  { emoji: '🔌', title: 'Red con alta capacidad',              desc: 'Toda nuestra infraestructura de enrutamiento, switching y distribución utiliza exclusivamente equipos de alta capacidad — el estándar de confiabilidad y rendimiento de redes a nivel mundial.' },
-  { emoji: '🌐', title: 'IPv6 nativo en todos los clientes',    desc: 'Todos nuestros clientes reciben conectividad IPv6 nativa — el protocolo de internet de nueva generación con espacio prácticamente ilimitado de direcciones. Estamos listos para el futuro de Internet.' },
+const capabilities = [
+  { emoji: '🎮', big: 'Steam',          sub: 'CDN de gaming directo',        color: 'var(--color-brand-green)' },
+  { emoji: '⚡', big: '40 Gb',          sub: 'Redundancia en cada nodo',     color: 'var(--color-brand-blue)'  },
+  { emoji: '🔌', big: 'Alta capacidad', sub: 'Equipos de grado mundial',     color: 'var(--color-brand-green)' },
+  { emoji: '🌐', big: 'IPv6',           sub: 'Nativo en todos los clientes', color: 'var(--color-brand-blue)'  },
 ];
 ---
 
@@ -162,12 +162,12 @@ const features = [
     </div>
 
     <!-- Core capabilities -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {features.map((f) => (
-        <div class="reveal rounded-2xl p-8" style="background: var(--color-brand-dark); border: 1px solid rgba(255,255,255,0.06);">
-          <div class="text-3xl mb-4" aria-hidden="true">{f.emoji}</div>
-          <h3 class="font-display font-bold text-lg text-white mb-2 uppercase tracking-wide">{f.title}</h3>
-          <p class="text-white/55 text-sm leading-relaxed">{f.desc}</p>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      {capabilities.map((c) => (
+        <div class="reveal rounded-2xl p-6 flex flex-col items-center text-center" style="background: var(--color-brand-dark); border: 1px solid rgba(255,255,255,0.06);">
+          <div class="text-3xl mb-3" aria-hidden="true">{c.emoji}</div>
+          <div class="font-display font-black text-2xl leading-tight mb-2" style={`color: ${c.color};`}>{c.big}</div>
+          <div class="text-white/45 text-xs leading-snug">{c.sub}</div>
         </div>
       ))}
     </div>
