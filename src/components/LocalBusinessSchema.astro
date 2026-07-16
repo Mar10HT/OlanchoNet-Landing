@@ -1,0 +1,71 @@
+---
+// LocalBusiness structured data (JSON-LD) for local SEO / rich results.
+// Address, coordinates and area served reflect OlanchoNet's Juticalpa office
+// and its coverage footprint across Olancho.
+const servedMunicipalities = [
+  'Juticalpa', 'Campamento', 'El Rosario', 'Gualaco', 'Guarizama', 'Guata',
+  'Jano', 'La Unión', 'Manto', 'Salamá', 'San Esteban',
+  'San Francisco de la Paz', 'Silca', 'Yocón',
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://olanchonet.com/#business',
+  name: 'OlanchoNet',
+  legalName: 'Olancho Net S.R.L. de C.V.',
+  url: 'https://olanchonet.com',
+  logo: 'https://olanchonet.com/images/logo-color.svg',
+  image: 'https://olanchonet.com/images/og-image.png',
+  description:
+    'Proveedor de Internet por fibra óptica en el departamento de Olancho, Honduras. Cobertura en 14 municipios, planes residenciales y empresariales, Televisión Digital y soporte técnico local.',
+  telephone: '+504 2705-9800',
+  email: 'ventas@olanchonet.com',
+  priceRange: '$$',
+  currenciesAccepted: 'HNL',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Residencial Álamos #2',
+    addressLocality: 'Juticalpa',
+    addressRegion: 'Olancho',
+    postalCode: '16101',
+    addressCountry: 'HN',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 14.6547,
+    longitude: -86.2189,
+  },
+  areaServed: servedMunicipalities.map((name) => ({ '@type': 'City', name })),
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
+  ],
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: '+504 2705-9800',
+      contactType: 'sales',
+      areaServed: 'HN',
+      availableLanguage: ['es'],
+    },
+    {
+      '@type': 'ContactPoint',
+      telephone: '+504 2785-4010',
+      contactType: 'customer service',
+      areaServed: 'HN',
+      availableLanguage: ['es'],
+    },
+  ],
+  sameAs: [
+    'https://instagram.com/olanchonet',
+    'https://wa.me/50427059800',
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -9,9 +9,11 @@ const {
   description = 'OlanchoNet es el proveedor de servicios de Internet líder en el departamento de Olancho, Honduras. Cobertura en 14 municipios, fibra empresarial, Televisión Digital y más.',
 } = Astro.props;
 
-const canonicalUrl = 'https://olanchonet.com';
-const ogImage = `${canonicalUrl}/images/og-image.png`;
+const siteUrl = Astro.site ?? new URL('https://olanchonet.com');
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const ogImageURL = new URL('/images/og-image.png', siteUrl);
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
 import '../styles/global.css';
 ---
 
@@ -21,20 +23,22 @@ import '../styles/global.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageURL} />
     <meta property="og:locale" content="es_HN" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={ogImageURL} />
     <link rel="icon" type="image/svg+xml" href="/images/icon-color.svg" />
     <title>{title}</title>
+    <LocalBusinessSchema />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Preload critical local fonts -->
