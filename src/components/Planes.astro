@@ -1,17 +1,29 @@
 ---
 const plans = [
-  { name: 'Básico',  mbps: 50,  popular: false },
-  { name: 'Hogar',   mbps: 80,  popular: true  },
-  { name: 'Plus',    mbps: 120, popular: false },
-  { name: 'Premium', mbps: 180, popular: false },
-  { name: 'Ultra',   mbps: 270, popular: false },
-];
-
-const baseFeatures = [
-  'CATV incluido',
-  'Televisión Digital incluida',
-  'Instalación incluida',
-  'Soporte técnico local',
+  {
+    name: '100 Megas + TV',
+    mbps: 100,
+    price: '650',
+    popular: true,
+    features: [
+      'Internet fibra óptica 100 Mbps',
+      'Televisión por cable incluida',
+      'Instalación incluida',
+      'Soporte técnico local',
+    ],
+  },
+  {
+    name: '200 Megas',
+    mbps: 200,
+    price: '900',
+    popular: false,
+    features: [
+      'Internet fibra óptica 200 Mbps',
+      'Ideal para gaming y streaming 4K',
+      'Instalación incluida',
+      'Soporte técnico local',
+    ],
+  },
 ];
 ---
 
@@ -24,140 +36,110 @@ const baseFeatures = [
         class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
         style="background: rgba(78,182,72,0.12); color: var(--color-brand-green);"
       >
-        Planes residenciales
+        Nuestros planes
       </span>
       <h2 class="font-display font-black text-4xl lg:text-5xl text-white tracking-tight">
         Internet para todos
       </h2>
       <p class="text-white/50 text-sm max-w-md leading-relaxed">
-        CATV y Televisión Digital incluidos en todos los planes. Haz click en una carta para ver los detalles.
+        Fibra óptica con instalación incluida y soporte técnico local. Sin contratos de permanencia.
       </p>
     </div>
 
     <!-- Cards grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-      {plans.map((plan, i) => (
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+
+      <!-- Plan cards -->
+      {plans.map((plan) => (
         <div
-          class="reveal flip-card cursor-pointer h-[380px]"
-          role="button"
-          tabindex="0"
-          aria-label={`Plan ${plan.name}, ${plan.mbps} Mbps`}
+          class="reveal rounded-2xl flex flex-col p-7"
+          style={plan.popular
+            ? 'background: #081628; box-shadow: inset 0 0 0 2px var(--color-brand-blue);'
+            : 'background: #0D1421; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.07);'}
         >
-          <div class="flip-card-inner">
-
-            <!-- Front face -->
-            <div
-              class="flip-card-front rounded-2xl flex flex-col justify-between p-6"
-              style={plan.popular
-                ? 'background: #081628; box-shadow: inset 0 0 0 2px var(--color-brand-blue);'
-                : 'background: #0D1421; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.07);'}
-            >
-              <!-- Plan name + popular badge -->
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-bold tracking-[0.15em] text-white/50 uppercase">
-                  {plan.name}
-                </span>
-                {plan.popular && (
-                  <span
-                    class="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                    style="background: rgba(78,182,72,0.18); color: var(--color-brand-green);"
-                  >
-                    Más popular
-                  </span>
-                )}
-              </div>
-
-              <!-- Mbps number -->
-              <div class="flex flex-col items-center gap-1">
-                <span class="font-display font-black text-[80px] leading-none text-white select-none">
-                  {plan.mbps}
-                </span>
-                <span class="text-[11px] tracking-[0.25em] text-white/35 uppercase">Mbps</span>
-              </div>
-
-              <!-- CTA + hint -->
-              <div class="flex flex-col gap-2">
-                <a
-                  href="#contacto"
-                  data-no-flip
-                  class="flex items-center justify-center h-10 rounded-lg text-[13px] font-bold text-white transition-opacity hover:opacity-90"
-                  style="background: var(--color-brand-blue);"
-                >
-                  Contáctanos
-                </a>
-                <span class="text-[11px] text-white/25 text-center">Haz click para ver detalles →</span>
-              </div>
-            </div>
-
-            <!-- Back face -->
-            <div
-              class="flip-card-back rounded-2xl flex flex-col justify-between p-6"
-              style="background: var(--color-brand-blue);"
-            >
-              <!-- Plan label -->
-              <div>
-                <p class="text-[11px] font-bold tracking-[0.15em] text-white/70 uppercase mb-5">
-                  {plan.name} · {plan.mbps} Mbps
-                </p>
-
-                <!-- Features -->
-                <ul class="flex flex-col gap-2.5">
-                  <li class="flex items-center gap-2 text-[13px] text-white">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" class="shrink-0">
-                      <circle cx="7" cy="7" r="7" fill="rgba(255,255,255,0.2)"/>
-                      <path d="M4 7l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    {plan.mbps} Mbps de velocidad
-                  </li>
-                  {baseFeatures.map((feature) => (
-                    <li class="flex items-center gap-2 text-[13px] text-white">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" class="shrink-0">
-                        <circle cx="7" cy="7" r="7" fill="rgba(255,255,255,0.2)"/>
-                        <path d="M4 7l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <!-- CTA -->
-              <div class="flex flex-col gap-3">
-                <a
-                  href="#contacto"
-                  data-no-flip
-                  class="flex items-center justify-center h-10 rounded-lg bg-white text-[13px] font-bold transition-opacity hover:opacity-90"
-                  style="color: var(--color-brand-blue);"
-                >
-                  Contáctanos
-                </a>
-              </div>
-            </div>
-
+          <div class="flex items-center justify-between mb-6">
+            <span class="text-[11px] font-bold tracking-[0.15em] text-white/50 uppercase">{plan.name}</span>
+            {plan.popular && (
+              <span
+                class="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                style="background: rgba(78,182,72,0.18); color: var(--color-brand-green);"
+              >
+                Más popular
+              </span>
+            )}
           </div>
+
+          <div class="flex items-baseline gap-1.5">
+            <span class="font-display font-black text-6xl leading-none text-white select-none">{plan.mbps}</span>
+            <span class="text-sm tracking-[0.2em] text-white/35 uppercase">Mbps</span>
+          </div>
+          <div class="mt-2 mb-6">
+            <span class="font-display font-bold text-2xl text-white">L {plan.price}</span>
+            <span class="text-sm text-white/50">/mes</span>
+          </div>
+
+          <ul class="flex flex-col gap-2.5 mb-6 flex-1">
+            {plan.features.map((f) => (
+              <li class="flex items-center gap-2 text-[13px] text-white/75">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" class="shrink-0">
+                  <circle cx="7" cy="7" r="7" fill="rgba(78,182,72,0.2)"/>
+                  <path d="M4 7l2 2 4-4" stroke="var(--color-brand-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="#contacto"
+            class="flex items-center justify-center h-11 rounded-lg text-[13px] font-bold text-white transition-opacity hover:opacity-90"
+            style="background: var(--color-brand-blue);"
+          >
+            Contáctanos
+          </a>
         </div>
       ))}
-    </div>
 
+      <!-- CTA: more speed -->
+      <div class="reveal rounded-2xl flex flex-col p-7" style="background: #0D1421; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.07);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background: rgba(0,118,187,0.15);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <h3 class="font-display font-bold text-xl text-white mb-2">¿Necesitas más velocidad?</h3>
+        <p class="text-white/50 text-sm leading-relaxed flex-1">
+          Tenemos planes de mayor capacidad. Contáctanos y armamos el plan ideal para ti.
+        </p>
+        <a
+          href="#contacto"
+          class="flex items-center justify-center h-11 rounded-lg text-[13px] font-bold text-white mt-6 border border-white/20 transition-colors hover:bg-white/5"
+        >
+          Contáctanos
+        </a>
+      </div>
+
+      <!-- CTA: business -->
+      <div class="reveal rounded-2xl flex flex-col p-7" style="background: linear-gradient(160deg, rgba(0,118,187,0.16), #0D1421);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background: rgba(0,118,187,0.22);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <h3 class="font-display font-bold text-xl text-white mb-2">¿Soluciones para tu empresa?</h3>
+        <p class="text-white/50 text-sm leading-relaxed flex-1">
+          Fibra empresarial con ancho de banda simétrico, IP fija y atención prioritaria. Hablemos de tu proyecto.
+        </p>
+        <a
+          href="#contacto"
+          class="flex items-center justify-center h-11 rounded-lg text-[13px] font-bold text-white mt-6 transition-opacity hover:opacity-90"
+          style="background: var(--color-brand-blue);"
+        >
+          Contáctanos
+        </a>
+      </div>
+
+    </div>
   </div>
 </section>
-
-<script>
-  import { gsap } from 'gsap';
-
-  document.querySelectorAll<HTMLElement>('.flip-card').forEach(card => {
-    let flipped = false;
-    const inner = card.querySelector<HTMLElement>('.flip-card-inner');
-    const flip = (e?: Event) => {
-      // Let CTA links navigate without flipping the card
-      if (e && (e.target as HTMLElement).closest('[data-no-flip]')) return;
-      flipped = !flipped;
-      card.classList.toggle('flipped', flipped);
-      if (inner) gsap.to(inner, { rotationY: flipped ? 180 : 0, duration: 0.65, ease: 'power2.inOut' });
-    };
-    card.addEventListener('click', flip);
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
-    });
-  });
-</script>
