@@ -227,6 +227,9 @@ const municipios = [
   .dot-group:nth-child(3n+2) .pulse-ring { animation-delay: 0.8s; }
   .dot-group:nth-child(3n)   .pulse-ring { animation-delay: 1.6s; }
 
+  /* Pause the pulse rings while the map is scrolled out of view */
+  .map-paused .pulse-ring { animation-play-state: paused; }
+
   @keyframes pulse {
     0%   { transform: scale(1);   opacity: 0.9; }
     70%  { transform: scale(2.2); opacity: 0; }
@@ -282,9 +285,12 @@ const municipios = [
     });
   }
 
-  // One packet per line, all running simultaneously, random direction each cycle
+  // One packet per line, all running simultaneously, random direction each cycle.
+  // The whole loop pauses when the map leaves the viewport (perf + battery): the
+  // glow filter only costs frames while the packets are actually moving.
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const CONNECTIONS: [number,number,number,number][] = [
+    type Conn = [number, number, number, number];
+    const CONNECTIONS: Conn[] = [
       [10463,11948,  9723, 8716],
       [10463,11948, 12147, 9050],
       [10463,11948, 10600, 8428],
@@ -308,32 +314,75 @@ const municipios = [
 
     const svgEl = document.querySelector<SVGSVGElement>('.map-overlay');
 
-    function animatePacket(circle: SVGCircleElement, conn: [number,number,number,number]) {
+    let running = true;
+    const activeTls = new Map<SVGCircleElement, ReturnType<typeof gsap.timeline>>();
+    const gapCalls = new Map<SVGCircleElement, ReturnType<typeof gsap.delayedCall>>();
+    let packets: { circle: SVGCircleElement; conn: Conn }[] = [];
+
+    function animatePacket(circle: SVGCircleElement, conn: Conn) {
+      gapCalls.delete(circle);
+      if (!running) return; // idle — restarted when the map is visible again
       const fwd = Math.random() > 0.5;
       const [x1, y1, x2, y2] = fwd ? conn : [conn[2], conn[3], conn[0], conn[1]];
       const dur = (700 + Math.random() * 900) / 1000;
 
-      gsap.timeline({
+      const tl = gsap.timeline({
         onComplete: () => {
-          gsap.delayedCall(Math.random() * 0.3 + 0.08, () => animatePacket(circle, conn));
+          activeTls.delete(circle);
+          if (!running) return;
+          gapCalls.set(circle, gsap.delayedCall(Math.random() * 0.3 + 0.08, () => animatePacket(circle, conn)));
         },
-      })
-        .set(circle, { attr: { cx: x1, cy: y1 }, opacity: 0 })
+      });
+      activeTls.set(circle, tl);
+      tl.set(circle, { attr: { cx: x1, cy: y1 }, opacity: 0 })
         .to(circle, { attr: { cx: x2, cy: y2 }, duration: dur, ease: 'none' }, 0)
         .to(circle, { opacity: 0.95, duration: dur * 0.12, ease: 'none' }, 0)
         .to(circle, { opacity: 0, duration: dur * 0.12, ease: 'none' }, dur * 0.88);
     }
 
+    function setRunning(next: boolean) {
+      if (next === running) return;
+      running = next;
+      if (next) {
+        activeTls.forEach((tl) => tl.resume());
+        packets.forEach(({ circle, conn }, i) => {
+          if (!activeTls.has(circle)) {
+            gapCalls.set(circle, gsap.delayedCall(i * 0.05, () => animatePacket(circle, conn)));
+          }
+        });
+      } else {
+        activeTls.forEach((tl) => tl.pause());
+        gapCalls.forEach((call) => call.kill());
+        gapCalls.clear();
+      }
+    }
+
     if (svgEl) {
-      CONNECTIONS.forEach((conn, i) => {
+      packets = CONNECTIONS.map((conn) => {
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
         circle.setAttribute('r', '115');
         circle.setAttribute('fill', '#4EB648');
         circle.setAttribute('opacity', '0');
         circle.setAttribute('filter', 'url(#packet-glow)');
         svgEl.appendChild(circle);
-        gsap.delayedCall(i * 0.12, () => animatePacket(circle, conn));
+        return { circle, conn };
       });
+      packets.forEach(({ circle, conn }, i) => {
+        gapCalls.set(circle, gsap.delayedCall(i * 0.12, () => animatePacket(circle, conn)));
+      });
+
+      // Pause packets + pulse rings while the section is out of view
+      const section = document.getElementById('cobertura');
+      if (section && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver(
+          ([entry]) => {
+            setRunning(entry.isIntersecting);
+            section.classList.toggle('map-paused', !entry.isIntersecting);
+          },
+          { threshold: 0 }
+        );
+        io.observe(section);
+      }
     }
   }
 
